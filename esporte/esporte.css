@@ -640,3 +640,59 @@ footer {
     width: 200px;
   }
 }
+
+/* Container do switch */
+.theme-switch-container {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 74, 153, 0.1);
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+/* Botão deslizante */
+.slider {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 26px;
+  position: relative;
+  transition: var(--transition-medium);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: var(--transition-medium);
+}
+
+/* Quando ativo */
+input:checked + .slider {
+  background-color: var(--main-color);
+}
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* Texto ao lado */
+.theme-label {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
