@@ -46,4 +46,17 @@ document.addEventListener("DOMContentLoaded", () => {
   new ThemeController();
 });
 
+// Botão voltar ao topo
+const btnTopo = document.getElementById("btn-topo");
 
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    btnTopo.classList.add("show");  // aparece com fade-in
+  } else {
+    btnTopo.classList.remove("show"); // desaparece com fade-out
+  }
+});
+
+btnTopo.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

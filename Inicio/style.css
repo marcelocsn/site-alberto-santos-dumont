@@ -3,12 +3,20 @@
   --cor-secundaria: #ddd;
   --cor-destaque: #ffffff;
   --cor-menu: #004a998f;
+  --cor-seta: #04305edf;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* evita barra lateral */
 }
 
 header {
@@ -132,12 +140,188 @@ header {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* ==================== HERO BANNER ==================== */
+.hero {
+  width: 100%;
+  min-width: 100vw;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  max-width: 100% !important; /* força ocupar tudo */
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #001f3f;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background: #003366;
+}
+
+/* ===== Seções ===== */
+section {
+  padding: 80px 1px;
+  margin: auto;
+}
+
+/* Sobre a Escola */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-content img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  color: #001f3f;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  text-align: justify;
+  color: #444;
+}
+
+/* Contato */
+.contact {
+  text-align: center;
+}
+
+.contact-boxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contact-box {
+  display: block;              
+  text-decoration: none;       
+  color: inherit;              
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;          
+  max-width: 1000px;    
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.contact-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.contact-box h4 {
+  color: #001f3f;
+  margin-bottom: 10px;
+}
+
+/* Mapa */
+.map-container {
+  margin-top: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 1000px;         
+  margin: 40px auto 0 auto;  
+}
+
+.map-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Regimento */
+.regimento {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.regimento h3 {
+  color: #001f3f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.btn-center {
+  text-align: center;
+}
+
+.btn-regimento {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #001f3f;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.btn-regimento:hover {
+  background: #003366;
+}
+
+/* FOOTER */
 footer {
   background: var(--cor-primaria);
   color: var(--cor-destaque);
   padding: 2.5rem 1rem;
   text-align: center;
-  ;
 }
 
 .footer-conteudo {
@@ -188,15 +372,14 @@ footer {
   opacity: 0.8;
 }
 
+/* ==================== MOBILE (até 600px) ==================== */
 @media (max-width: 600px) {
   header {
     display: flex;
-    flex-direction: row;
-    /* mantém horizontal */
+    flex-direction: row; /* mantém horizontal */
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 1rem 2.5rem;
-    /* espaço extra para a logo */
+    padding: 0.8rem 1rem 2.5rem; /* espaço extra para a logo */
     position: relative;
   }
 
@@ -220,25 +403,20 @@ footer {
   /* Nome da escola */
   .nome-escola {
     font-size: 1rem;
-    position: absolute;
-    /* fixa dentro do header */
-    top: 58px;
-    /* desce */
-    left: 50%;
-    /* centraliza */
+    position: absolute;        /* fixa dentro do header */
+    top: 58px;                 /* desce */
+    left: 50%;                 /* centraliza */
     transform: translateX(-50%);
     margin: 2;
     text-align: center;
     font-weight: bold;
-    white-space: nowrap;
-    /* impede o texto de quebrar */
+    white-space: nowrap;   /* impede o texto de quebrar */
   }
 
   /* Logo central */
   .logo-central {
     position: absolute;
-    top: -10px;
-    /* ajusta a altura */
+    top: -10px;                /* ajusta a altura */
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
@@ -249,27 +427,22 @@ footer {
     width: 100px;
     height: 100px;
   }
-
-  /* Menu topo – vira horizontal com scroll lateral */
-  .menu-topo {
+   .menu-topo {
     display: block;
     width: 100%;
-    margin-top: 70px;
-    /* encosta mais no header */
-    overflow-x: auto;
-    /* arrastar pro lado */
+    margin-top: 70px;            /* encosta mais no header */
+    overflow-x: auto;            /* arrastar pro lado */
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     background-color: var(--cor-primaria);
-    padding: 0.1rem 0;
-    line-height: 1;
+    padding: 0.1rem 0;           /* altura mínima */
+    line-height: 1;              /* compacta ainda mais */
   }
 
-  /* Esconde a barra de rolagem mas mantém scroll */
+  /* Esconde barra de rolagem mas mantém scroll */
   .menu-topo::-webkit-scrollbar {
     display: none;
   }
-
   .menu-topo {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -277,7 +450,7 @@ footer {
 
   .menu-topo ul {
     display: inline-flex;
-    gap: 0.8rem;
+    gap: 0.8rem;                 /* espaçamento menor */
     padding: 0 0.5rem;
     list-style: none;
   }
@@ -287,20 +460,19 @@ footer {
     color: var(--cor-destaque);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.85rem;
-    /* fonte menor */
-    padding: 0.2rem 0.4rem;
+    font-size: 0.85rem;          /* fonte menor */
+    padding: 0.2rem 0.4rem;      /* só um respiro */
   }
 
   .menu-topo a:hover {
-    color: #00ff00;
+    color: #ffdd57;
   }
 
-  /* Menu lateral menor */
   #menu-lateral {
     width: 200px;
   }
 }
+
 
 /* Container do switch */
 .theme-switch-container {
@@ -438,4 +610,46 @@ body.light {
   --cor-secundaria: #020202bf;
   --cor-destaque: #ffffff;
   --cor-menu: #5a5a5a82;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Botão Voltar ao Topo */
+#btn-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--cor-seta);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  opacity: 0;                  /* começa invisível */
+  visibility: hidden;          /* evita clique quando invisível */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.4s ease, transform 0.3s ease, visibility 0.4s;
+  z-index: 1000;
+}
+
+#btn-topo.show {
+  opacity: 1;                  /* aparece */
+  visibility: visible;
+}
+
+#btn-topo:hover {
+  background: #000000;
+  transform: scale(1.1);
+}
+
+/* Ajuste apenas da seção de contato */
+#endereco {
+  padding-top: 0px;  /* diminui o espaço de cima */
 }
