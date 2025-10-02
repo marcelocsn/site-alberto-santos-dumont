@@ -1,64 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById('hamburguer');
-  const navLateral = document.getElementById('menu-lateral');
+// ========================
+// MENU HAMBURGUER
+// ========================
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
-  btn.addEventListener('click', () => {
-    navLateral.classList.toggle('show');
-    btn.classList.toggle('ativo');
-  });
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
 });
 
-// ThemeController
-class ThemeController {
-  constructor() {
-    this.toggleThemeCheckbox = document.getElementById("toggle-theme");
-    this.themeLabel = document.getElementById("theme-label");
-    this.currentTheme = localStorage.getItem("theme") || "dark"; 
-    this.init();
-  }
-
-  init() {
-    this.applyTheme(this.currentTheme);
-    this.toggleThemeCheckbox.addEventListener("change", () => {
-      this.currentTheme = this.currentTheme === "dark" ? "light" : "dark";
-      this.applyTheme(this.currentTheme);
-      localStorage.setItem("theme", this.currentTheme);
-    });
-  }
-
-  applyTheme(theme) {
-    if (theme === "light") {
-      document.body.classList.add("light");  
-      this.toggleThemeCheckbox.checked = true;
-      this.themeLabel.textContent = "Modo Escuro";
-    } else {
-      document.body.classList.remove("light");
-      this.toggleThemeCheckbox.checked = false;
-      this.themeLabel.textContent = "Modo Claro";
-    }
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  new ThemeController();
-});
-
-// Botão voltar ao topo
-const btnTopo = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) {
-    btnTopo.classList.add("show");
-  } else {
-    btnTopo.classList.remove("show");
-  }
-});
-
-btnTopo.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
+// ========================
 // FADE-IN DAS SEÇÕES
+// ========================
 const items = document.querySelectorAll('.item');
 
 function checkVisible() {
@@ -73,7 +25,22 @@ function checkVisible() {
 window.addEventListener('scroll', checkVisible);
 window.addEventListener('load', checkVisible);
 
+// ========================
+// BOTÃO VOLTAR AO TOPO
+// ========================
+const topBtn = document.getElementById('topBtn');
+
+window.addEventListener('scroll', () => {
+  topBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+topBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ========================
 // SCROLL SUAVE NO MENU
+// ========================
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -85,13 +52,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
       const offsetPosition = elementPosition - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
-    document.getElementById('nav-links')?.classList.remove('active');
+    navLinks.classList.remove('active'); // fecha menu mobile
   });
 });
 
+// ========================
 // LIGHTBOX POR SEÇÃO
+// ========================
 const overlay = document.createElement('div');
 overlay.id = 'image-overlay';
+
 const imgElement = document.createElement('img');
 const btnPrev = document.createElement('button');
 const btnNext = document.createElement('button');
@@ -107,10 +77,10 @@ overlay.appendChild(btnNext);
 document.body.appendChild(overlay);
 
 let currentIndex = 0;
-let currentGroup = [];
+let currentGroup = []; // guarda as imagens da seção atual
 
 function openImage(index, group) {
-  currentGroup = Array.from(group);
+  currentGroup = Array.from(group); // define o grupo da seção
   currentIndex = index;
   imgElement.src = currentGroup[currentIndex].src;
   overlay.style.display = 'flex';
@@ -124,26 +94,28 @@ overlay.addEventListener('click', (e) => {
   }
 });
 
-btnPrev.addEventListener('click', e => {
-  e.stopPropagation();
-  currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
-  imgElement.src = currentGroup[currentIndex].src;
+btnPrev.addEventListener('click', e => { 
+  e.stopPropagation(); 
+  currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length; 
+  imgElement.src = currentGroup[currentIndex].src; 
 });
 
-btnNext.addEventListener('click', e => {
-  e.stopPropagation();
-  currentIndex = (currentIndex + 1) % currentGroup.length;
-  imgElement.src = currentGroup[currentIndex].src;
+btnNext.addEventListener('click', e => { 
+  e.stopPropagation(); 
+  currentIndex = (currentIndex + 1) % currentGroup.length; 
+  imgElement.src = currentGroup[currentIndex].src; 
 });
 
+// Para cada seção .item, pega todas as imagens dentro dela
 document.querySelectorAll('.item').forEach(section => {
-  const images = section.querySelectorAll('img');
+  const images = section.querySelectorAll('img'); // pode ter 1 ou várias
   images.forEach((img, index) => {
     img.style.cursor = 'pointer';
     img.addEventListener('click', () => openImage(index, images));
   });
 });
 
+// Teclado
 document.addEventListener('keydown', e => {
   if (overlay.style.display === 'flex') {
     if (e.key === 'Escape') {
@@ -154,3 +126,21 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') btnNext.click();
   }
 });
+
+// Swipe mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+imgElement.addEventListener('touchstart', e => { 
+  touchStartX = e.changedTouches[0].screenX; 
+});
+imgElement.addEventListener('touchend', e => { 
+  touchEndX = e.changedTouches[0].screenX; 
+  handleGesture(); 
+});
+
+function handleGesture() {
+  if (touchEndX < touchStartX - 50) btnNext.click();
+  if (touchEndX > touchStartX + 50) btnPrev.click();
+}
+
