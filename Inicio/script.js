@@ -8,40 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ThemeController
-class ThemeController {
-  constructor() {
-    this.toggleThemeCheckbox = document.getElementById("toggle-theme");
-    this.themeLabel = document.getElementById("theme-label");
-    this.currentTheme = localStorage.getItem("theme") || "dark"; 
-    this.init();
-  }
 
-  init() {
-    this.applyTheme(this.currentTheme);
-    this.toggleThemeCheckbox.addEventListener("change", () => {
-      this.currentTheme = this.currentTheme === "dark" ? "light" : "dark";
-      this.applyTheme(this.currentTheme);
-      localStorage.setItem("theme", this.currentTheme);
-    });
-  }
-
-  applyTheme(theme) {
-    if (theme === "light") {
-      document.body.classList.add("light");  
-      this.toggleThemeCheckbox.checked = true;
-      this.themeLabel.textContent = "Modo Escuro";
-    } else {
-      document.body.classList.remove("light");
-      this.toggleThemeCheckbox.checked = false;
-      this.themeLabel.textContent = "Modo Claro";
-    }
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  new ThemeController();
-});
 
 // Botão voltar ao topo
 const btnTopo = document.getElementById("topBtn");
