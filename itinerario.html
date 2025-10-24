@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Estadual Alberto Santos Dumont</title>
+    <link rel="shortcut icon" href="./assets/Projeto Remover fundo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./itinerario/itinerario.css">
+</head>
+
+<body>
+    <header>
+        <button class="hamburguer" id="hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="logo-central">
+            <img src="./assets/Projeto Remover fundo.png" alt="Símbolo da escola" />
+        </div>
+
+        <h1 class="nome-escola">E.E. Alberto Santos Dumont</h1>
+
+        <nav class="menu-topo">
+            <ul>
+                <li><a href="index.html"><i class='bx bx-home'></i> Início</a></li>
+                <li><a href="#itinerario"><i class='bx bx-book'></i> Itinerários</a></li>
+                <li><a href="#exatas"><i class='bx bx-calculator'></i> Exatas</a></li>
+                <li><a href="#galeria"><i class='bx bx-image'></i> Galeria</a></li>
+            </ul>
+        </nav>
+
+        <nav id="menu-lateral">
+            <ul>
+               <li><a href="./index.html">Início</a></li>
+                 <li><a href="#historia">História</a></li>
+                <li><a href="./estrutura.html">Estrutura</a></li>
+                <li><a href="./itinerario.html">Itinerários</a></li>
+                <li><a href="./esporte.html">Esporte</a></li>
+                <li><a href="https://site3.com" target="_blank">Eventos</a></li>
+                <li><a href="https://site3.com" target="_blank">Fundadores</a></li>
+            </ul>
+
+            <div class="theme-switch-container">
+                <label class="theme-switch">
+                    <input type="checkbox" id="toggle-theme">
+                    <span class="slider"></span>
+                    <span class="theme-label" id="theme-label">Modo Escuro</span>
+                </label>
+            </div>
+        </nav>
+
+    </header>
+ 
+
+  <div class="wrap" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo">IT</div>
+        <div>
+          <h1>Itinerários Formativos</h1>
+          <p class="lead">Apresentação dos itinerários oferecidos aos estudantes do 2º e 3º ano do Ensino Médio.</p>
+        </div>
+      </div>
+      <div class="controls" aria-hidden="false">
+      
+      </div>
+    </header>
+<section class="intro-itinerarios">
+    <p>Os itinerários são componentes curriculares optativos que aprofundam conteúdos por área de conhecimento. Abaixo você pode explorar o conteúdo programático e as habilidades trabalhadas para cada itinerário — selecionando o ano (2º ou 3º) que será ofertado.</p>
+  </section>
+    <main>
+      <section class="itinerario" aria-labelledby="Itinerarios">
+    
+
+    <section class="intro">
+    <h1>Curso Técnico Profissionalizante</h1>
+  </section>
+      
+<article class="card" id="ti">
+  <div class="card-header">
+    <div>
+      <h2>Itinerário: Tecnologia da Informação (TI)</h2>
+      <div class="chip" aria-hidden="true">Programação · Redes · Banco de Dados</div>
+    </div>
+  </div>
+  <p class="desc">Introdução às linguagens de programação, pensamento computacional, segurança e infraestrutura de redes.</p>
+  <div class="years" role="tablist" aria-label="Selecione o ano para ver detalhes">
+    <button class="year-btn" data-itin="ti" data-ano="2" aria-selected="false">2º ano</button>
+    <button class="year-btn" data-itin="ti" data-ano="3" aria-selected="false">3º ano</button>
+  </div>
+  <div class="details" id="ti-det-2" hidden>
+    <strong>2º ano — Conteúdos e objetivos</strong>
+    <ul class="list">
+      <li>Lógica e Linguagem de Programação;</li>
+      <li>Redes de Computadores e Segurança de Informação na Nuvem;</li>
+      <li>Processos de Desenvolvimento de Software e Metodologias ágeis;</li>
+      <li>Carreira e Competências para o Mercado de Trabalho em Desenvolvimento de sistemas;</li>
+       <li>Língua Portuguesa;</li>
+             <li>Física;</li>
+             <li>História;</li>
+             <li>Química;</li>
+             <li>Biologia;</li>
+             <li>Matemática.</li>
+    </ul>
+    
+    <!-- Adicionando vídeo educacional dentro do 2º ano -->
+    <div class="educational-videos">
+      <strong> Vídeo Educacional Complementar</strong>
+      <p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0 1rem 0;">Assista ao vídeo abaixo para aprofundar seus conhecimentos:</p>
+      <div class="video-container">
+        <iframe 
+          width="100%" 
+          height="315" 
+          src="https://www.youtube.com/embed/p8W22jcyXcQ" 
+          title="Vídeo Educacional - Introdução à Programação" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  
+  <div class="details" id="ti-det-3" hidden>
+    <strong>3º ano — Conteúdos e objetivos</strong>
+    <ul class="list">
+      <li>Projeto Multidisciplinar ;</li>
+      <li>Modelagem e Desenvolvimento de Banco de Dados;</li>
+      <li>Programação Back-End;</li>
+      <li>Programação Front-End;</li>
+      <li>Programação Mobile;</li>
+       <li>Língua Portuguesa;</li>
+             <li>Física;</li>
+             <li>História;</li>
+             <li>Química;</li>
+             <li>Biologia;</li>
+             <li>Matemática.</li>
+    </ul>
+     <div class="educational-videos">
+      <strong> Vídeo Educacional Complementar</strong>
+      <p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0 1rem 0;">Assista ao vídeo abaixo para aprofundar seus conhecimentos:</p>
+      <div class="video-container">
+       <iframe 
+          width="100%" 
+          height="315" 
+          src="https://www.youtube.com/embed/EYxsVenlmeo" 
+          title="Vídeo Educacional - Programação Avançada" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+</article>
+
+
+         <article class="card" id="administracao">
+          <div class="card-header">
+            <div>
+              <h2>Itinerário: Administração</h2>
+              <div class="chip" aria-hidden="true">Empreendedorismo · Gestão · Finanças</div>
+            </div>
+          </div>
+          <p class="desc">Aprofundamento em gestão de projetos, planejamento financeiro, e desenvolvimento de espírito empreendedor.</p>
+          <div class="years" role="tablist" aria-label="Selecione o ano para ver detalhes">
+            <button class="year-btn" data-itin="administracao" data-ano="2" aria-selected="false">2º ano</button>
+            <button class="year-btn" data-itin="administracao" data-ano="3" aria-selected="false">3º ano</button>
+          </div>
+          <div class="details" id="administracao-det-2" hidden>
+            <strong>2º ano — Conteúdos e objetivos</strong>
+            <ul class="list">
+              <li>introdução à administração, Legislação e Pessoas;</li>
+              <li>Carreiras e competências para o mercado de trabalho em Administração;</li>
+              <li>Matemática Aplicada á Administração;</li>
+               <li>Língua Portuguesa;</li>
+             <li>Física;</li>
+             <li>História;</li>
+             <li>Química;</li>
+             <li>Biologia;</li>
+             <li>Matemática.</li>
+            </ul>
+            
+            <!-- Adicionando vídeo educacional dentro do 2º ano de Administração -->
+            <div class="educational-videos">
+              <strong> Vídeo Educacional Complementar</strong>
+              <p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0 1rem 0;">Assista ao vídeo abaixo para aprofundar seus conhecimentos:</p>
+              <div class="video-container">
+                <iframe 
+                  width="100%" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/A9Zk8XAwsqw" 
+                  title="Vídeo Educacional - Administração 2º ano" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <div class="details" id="administracao-det-3" hidden>
+            <strong>3º ano — Conteúdos e objetivos</strong>
+            <ul class="list">
+              <li>Projeto Multidisciplinar;</li>
+              <li>Gestão de Operações;</li>
+              <li>Gestão Financeira e Contabilidade;</li>
+              <li>Inovação e Desenvolvimento de Negócios;</li>
+             <li>Marketing Estratégico;</li>
+             <li>Língua Portuguesa;</li>
+             <li>Física;</li>
+             <li>História;</li>
+             <li>Química;</li>
+             <li>Biologia;</li>
+             <li>Matemática.</li>
+
+            </ul>
+
+            <div class="educational-videos">
+              <strong> Vídeo Educacional Complementar</strong>
+              <p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0 1rem 0;">Assista ao vídeo abaixo para aprofundar seus conhecimentos:</p>
+              <div class="video-container">
+                <iframe 
+                  width="100%" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/OfUSgmY_mJw" 
+                  title="Vídeo Educacional - Administração 3º ano" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+      <br><br>
+<section class="intro2">
+    <h1>Itinerário Comum</h1>
+  </section>
+
+            <section class="exatas" aria-label="itinerarios">
+        
+        <article class="card" id="exatas">
+          <div class="card-header2">
+            <div>
+              <h2>Itinerário: Exatas</h2>
+              <div class="chip" aria-hidden="true">Matemática · Física · Química</div>
+            </div>
+          </div>
+          <p class="desc">Foco em raciocínio lógico, resolução de problemas, modelagem matemática e aplicações práticas em Ciências Exatas.</p>
+          <div class="years" role="tablist" aria-label="Selecione o ano para ver detalhes">
+            <button class="year-btn" data-itin="exatas" data-ano="2" aria-selected="false">2º ano</button>
+            <button class="year-btn" data-itin="exatas" data-ano="3" aria-selected="false">3º ano</button>
+          </div>
+          <div class="details" id="exatas-det-2" hidden>
+            <strong>2º ano — Conteúdos e objetivos</strong>
+            <ul class="list">
+              <li>Química;</li>
+              <li>Biologia;</li>
+              <li>Física;</li>
+              <li>Matemática.</li>
+              
+            </ul>
+
+          </div>
+          <div class="details" id="exatas-det-3" hidden>
+            <strong>3º ano — Conteúdos e objetivos</strong>
+            <ul class="list">
+              <li>Programação;</li>
+              <li>Física;</li>
+              <li>Química;</li>
+              <li>Matemática;</li>
+              <li>Biologia.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" id="humanas">
+          <div class="card-header">
+            <div>
+              <h2>Itinerário: Ciências Humanas</h2>
+              <div class="chip" aria-hidden="true">História · Filosofia · Sociologia · Geografia</div>
+            </div>
+          </div>
+          <p class="desc">Exploração crítica das ciências humanas, desenvolvimento do pensamento filosófico e compreensão das dinâmicas sociais.</p>
+          <div class="years" role="tablist" aria-label="Selecione o ano para ver detalhes">
+            <button class="year-btn" data-itin="humanas" data-ano="2" aria-selected="false">2º ano</button>
+            <button class="year-btn" data-itin="humanas" data-ano="3" aria-selected="false">3º ano</button>
+          </div>
+          <div class="details" id="humanas-det-2" hidden>
+            <strong>2º ano — Conteúdos e objetivos</strong>
+            <ul class="list">
+              <li>Filosofia;</li>
+              <li>História;</li>
+              <li>Geografia;</li>
+              <li>Matemática</li>
+               <li>Física;</li>
+              <li>Química;</li>
+              <li>Oratória;</li>
+              <li>Sociologia;</li>
+              <li>Língua Portuguesa;</li>
+              <li>Artes e Mídias Digitais.</li>
+            </ul>
+          </div>
+          <div class="details" id="humanas-det-3" hidden>
+            <strong>3º ano — Conteúdos e objetivos</strong>
+            <ul class="list">
+         <li>Filosofia;</li>
+              <li>História;</li>
+              <li>Geografia;</li>
+              <li>Matemática</li>
+               <li>Física;</li>
+              <li>Química;</li>
+              <li>Oratória;</li>
+              <li>Sociologia;</li>
+              <li>Língua Portuguesa;</li>
+              <li>Artes e Mídias Digitais;</li>
+              <li>Redação.</li>
+            </ul>
+          </div>
+        </article>
+        </section>
+      </section>
+ 
+<section class="galeria" Times New Roman="galeria">
+  <h2 id="galeria">Galeria dos Itinerários</h2>
+  <p class="medium">Veja imagens das salas de aula e equipamentos usados nos itinerários.</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="assets/IMG_4110.jpg" alt="Sala de Matemática e Física" />
+    </div>
+    <div class="gallery-item">
+      <img src="assets/IMG_4111.jpg" alt="Laboratório de Química" />
+    </div>
+    <div class="gallery-item">
+      <img src="assets/IMG_4135.jpg" alt="Sala de Ciências Humanas" />
+    </div>
+    <div class="gallery-item">
+      <img src="assets/IMG_4138.jpg" alt="Espaço de Administração e Empreendedorismo" />
+    </div>
+  </div>
+</section>
+</section>
+
+
+    </main>
+       
+            
+    
+  </div>
+
+  <footer id="contato">
+        <div class="footer-conteudo">
+            <img src="./assets/Projeto Remover fundo.png" alt="Logo da Escola" class="footer-logo">
+            <h3 class="footer-nome">E.E. Alberto Santos Dumont</h3>
+            <div class="footer-links">
+                <a href="tel:+551636303424"><i class='bx bx-phone'></i> (16) 3630-3424</a>
+                <a href="https://www.instagram.com/escola.asd/" target="_blank">
+                    <i class='bx bxl-instagram'></i> @escola.asd
+                    <div class="small"> <span id="updateDate"></span></div>
+                </a>
+            </div>
+        </div>
+        <p class="direitos">© 2025 E.E. Alberto Santos Dumont - Todos os direitos reservados</p>
+    </footer>
+
+  <script src="./itinerario/itinerario.js"></script>
+</body>
+</html>
