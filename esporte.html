@@ -8,6 +8,9 @@
   <link rel="shortcut icon" href="#" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="./esporte/esporte.css" />
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
@@ -19,14 +22,6 @@
       <span></span>
     </button>
 
-    <div class="theme-switch-container">
-      <label class="theme-switch">
-        <input type="checkbox" id="toggle-theme">
-        <span class="slider"></span>
-        <span class="theme-label" id="theme-label">Modo Escuro</span>
-      </label>
-    </div>
-
     <div class="logo-central">
       <img src="assets/Projeto Remover fundo.png" alt="Símbolo da escola" />
     </div>
@@ -35,22 +30,25 @@
 
     <nav class="menu-topo">
       <ul>
-        <li><a href="#inicio"><i class='bx bx-home'></i> Início</a></li>
-        <li><a href="#historia"><i class='bx bx-library'></i> História</a></li>
-        <li><a href="#estrutura"><i class='bx bx-school'></i> Estrutura</a></li>
-        <li><a href="#regimento"><i class='bx bx-gavel'></i> Regimento</a></li>
+        <li><a href="index.html"><i class='bx bx-home'></i> Início</a></li>
+        <li><a href="#historia"><i class='bx bx-library'></i> Modalidades</a></li>
+        <li><a href="#estrutura"><i class="fa-solid fa-image""></i> Galeria</a></li>
+        <li><a href=" #regimento"><i class="fa-solid fa-trophy"></i> Trofeus</a></li>
       </ul>
     </nav>
 
     <nav id="menu-lateral">
       <ul>
-        <li><a href="https://site1.com" target="_blank">Início</a></li>
-        <li><a href="https://site1.com" target="_blank">Itinerários</a></li>
-        <li><a href="https://site2.com" target="_blank">Esporte</a></li>
-        <li><a href="https://site3.com" target="_blank">Eventos</a></li>
-        <li><a href="https://site3.com" target="_blank">Fundadores</a></li>
+        <li><a href="inicio.html" target="_blank">Início</a></li>
+        <li><a href="itinerarios.html" target="_blank">Itinerários</a></li>
+        <li><a href="esporte.html" target="_blank">Esporte</a></li>
+        <li><a href="evento.html" target="_blank">Eventos</a></li>
+        <li><a href="fundadores.html" target="_blank">Fundadores</a></li>
       </ul>
+
     </nav>
+
+
   </header>
 
 
@@ -69,9 +67,8 @@
       <div class="carousel">
         <button class="prev">&#10094;</button>
         <div class="carousel-images">
-          <img src="imagens-modalidades/transferir (36).jfif" alt="Imagem 1">
-          <img src="imagens-modalidades/transferir (37).jfif" alt="Imagem 2">
-          <img src="imagens-modalidades/transferir (38).jfif" alt="Imagem 3">
+          <img src="esporte.assets/xadrez.png" alt="Imagem 2">
+          <img src="esporte.assets/tenisdemesa.png" alt="Imagem 3">
         </div>
         <button class="next">&#10095;</button>
       </div>
@@ -80,9 +77,8 @@
       <div class="carousel">
         <button class="prev">&#10094;</button>
         <div class="carousel-images">
-          <img src="imagens-modalidades/transferir (37).jfif" alt="Imagem 4">
-          <img src="imagens-modalidades/transferir (39).jfif" alt="Imagem 5">
-          <img src="imagens-modalidades/transferir (36).jfif" alt="Imagem 6">
+          <img src="esporte.assets/futsal.jpg" alt="Imagem 4">
+          <img src="esporte.assets/volei.jpg" alt="Imagem 5">
         </div>
         <button class="next">&#10095;</button>
       </div>
@@ -91,9 +87,8 @@
       <div class="carousel">
         <button class="prev">&#10094;</button>
         <div class="carousel-images">
-          <img src="assets/galeria7.jpg" alt="Imagem 7">
-          <img src="assets/galeria8.jpg" alt="Imagem 8">
-          <img src="assets/galeria9.jpg" alt="Imagem 9">
+          <img src="esporte.assets/basquete.jpg" alt="Imagem 7">
+          <img src="esporte.assets/sport1.jfif" alt="Imagem 8">
         </div>
         <button class="next">&#10095;</button>
       </div>
@@ -103,51 +98,37 @@
     <h2><i class='bx bx-image'></i> Galeria de Fotos</h2>
 
     <div class="grid">
-      <img src="imagens-modalidades/transferir (36).jfif" alt="Imagem 1">
-      <img src="imagens-modalidades/transferir (37).jfif" alt="Imagem 2">
-      <img src="imagens-modalidades/transferir (38).jfif" alt="Imagem 3">
-      <img src="imagens-modalidades/transferir (39).jfif" alt="Imagem 4">
-      <img src="assets/galeria7.jpg" alt="Imagem 5">
-      <img src="assets/galeria8.jpg" alt="Imagem 6">
-      <img src="assets/galeria9.jpg" alt="Imagem 7">
+      <img src="esporte.assets/paisagem1.jpg" alt="Imagem 1">
+      <img src="esporte.assets/paisagem2.jpg" alt="Imagem 2">
+      <img src="esporte.assets/paisagem3.jpg" alt="Imagem 3">
+
+
     </div>
   </section>
 
   <section id="trofeus" class="trofeus">
-    <h2><i class='bx bx-trophy'></i> Trofeus</h2>
+    <h2><i class='bx bx-trophy'></i> Troféus</h2>
 
     <div class="grid">
       <!-- Carrossel 1 -->
       <div class="carousel">
-        <button class="prev">&#10094;</button>
         <div class="carousel-images">
-          <img src="imagens-modalidades/transferir (36).jfif" alt="Imagem 1">
-          <img src="imagens-modalidades/transferir (37).jfif" alt="Imagem 2">
-          <img src="imagens-modalidades/transferir (38).jfif" alt="Imagem 3">
+          <img src="esporte.assets/trofeu1.png" alt="Imagem 1">
         </div>
-        <button class="next">&#10095;</button>
       </div>
 
       <!-- Carrossel 2 -->
       <div class="carousel">
-        <button class="prev">&#10094;</button>
         <div class="carousel-images">
-          <img src="imagens-modalidades/transferir (37).jfif" alt="Imagem 4">
-          <img src="imagens-modalidades/transferir (39).jfif" alt="Imagem 5">
-          <img src="imagens-modalidades/transferir (36).jfif" alt="Imagem 6">
+          <img src="esporte.assets/trofeu2.png" alt="Imagem 4">
         </div>
-        <button class="next">&#10095;</button>
       </div>
 
       <!-- Carrossel 3 -->
       <div class="carousel">
-        <button class="prev">&#10094;</button>
         <div class="carousel-images">
-          <img src="assets/galeria7.jpg" alt="Imagem 7">
-          <img src="assets/galeria8.jpg" alt="Imagem 8">
-          <img src="assets/galeria9.jpg" alt="Imagem 9">
+          <img src="esporte.assets/trofeu3.jpeg" alt="Imagem 7">
         </div>
-        <button class="next">&#10095;</button>
       </div>
   </section>
 
@@ -168,7 +149,7 @@
 
 
 
-  <script src="./esporte/esporte.js" defer></script>
+  <script src="./esporte/esporte.js"></script>
 </body>
 
 </html>
