@@ -22,7 +22,7 @@
 }
 
 html {
-  font-family: "Poppins", sans-serif;
+  font-family: "Times New Roman", sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
 }
@@ -78,6 +78,7 @@ header {
 }
 
 /* MENU LATERAL */
+/* MENU LATERAL */
 #menu-lateral {
   position: fixed;
   top: 0;
@@ -90,8 +91,11 @@ header {
   z-index: 999;
 }
 
+/* Adicionado efeito de transparência quando o menu está aberto */
 #menu-lateral.show {
   left: 0;
+  background: rgba(25, 85, 148, 0.85);
+  backdrop-filter: blur(10px);
 }
 
 #menu-lateral ul {
