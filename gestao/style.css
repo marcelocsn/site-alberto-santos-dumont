@@ -932,3 +932,106 @@ section {
   }
 }
 
+/* ===== MODAL CORRIGIDO (CENTRALIZADO NO CELULAR) ===== */
+/* ===== MODAL CORRETO, CENTRALIZADO E SEM BUG ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+
+  /* Correto! Modal começa oculto */
+  display: none !important;
+
+  /* Quando ativo, o JS adiciona .show */
+}
+
+.modal.show {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+
+/* A imagem centraliza perfeitamente */
+.modal-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+
+  border-radius: 12px;
+  margin: 0 !important;
+}
+
+
+/* Botão fechar */
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+
+/* Setas de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  padding: 15px;
+  z-index: 10000;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.prev:hover, .next:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+
+
+/* ===== CORRIGIR BOXES DA GESTÃO NO CELULAR ===== */
+@media (max-width: 600px) {
+
+  /* Cada box vira bloco igual a box da turma */
+  .portfolio-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Remove CORTES na imagem */
+  .portfolio-image {
+    width: 100%;
+    height: auto !important;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;  /* ❗ Mostra a foto inteira */
+    background: #00000010; /* evita fundo branco estranho */
+  }
+}
+
+/* Não cortar fotos da gestão */
+.portfolio-container .portfolio-image {
+  height: auto;
+}
+
+.portfolio-container .portfolio-image img {
+  object-fit: contain;
+  height: auto;
+  width: 100%;
+}
