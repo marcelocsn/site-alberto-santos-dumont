@@ -1035,3 +1035,19 @@ section {
   height: auto;
   width: 100%;
 }
+
+/* Grade fixa da gestão em 2 colunas */
+.portfolio-container {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* No celular volta para 1 coluna */
+@media (max-width: 700px) {
+  .portfolio-container {
+    grid-template-columns: 1fr !important;
+  }
+}
