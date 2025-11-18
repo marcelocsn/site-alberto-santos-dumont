@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História da Escola</title>
+  <link rel="shortcut icon" href="assets/Projeto Remover fundo.png" type="image/x-icon">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="historia/historia.css">
+</head>
+
+<body>
+
+  <header>
+    <button class="hamburguer" id="hamburguer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="logo-central">
+      <img src="assets/Projeto Remover fundo.png" alt="Símbolo da escola" />
+    </div>
+
+    <h1 class="nome-escola">E.E. Alberto Santos Dumont</h1>
+
+    <nav class="menu-topo">
+      <ul>
+        <li><a href="#inicio"><i class='bx bx-home'></i> Início</a></li>
+        <li><a href="#historia"><i class='bx bx-library'></i> História</a></li>
+        <li><a href="#entrevista"><i class='fa-solid fa-comments'></i> Entrevista</a></li>
+
+      </ul>
+    </nav>
+
+    <nav id="menu-lateral">
+            <ul>
+                <li><a href="index.html"><i class='bx bx-home'></i> Início</a></li>
+      <li><a href="historia.html"><i class='bx bx-book'></i> História</a></li>
+      <li><a href="estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
+      <li><a href="itinerario.html"><i class='bx bx-book'></i> Itinerários</a></li>
+      <li><a href="esporte.html"><i class='bx bxs-basketball'></i> Esporte</a></li>
+      <li><a href="eventos.html"><i class="bx bx-calendar"></i> Eventos</a></li>
+      <li><a href="gestao.html"><i class="bx bx-user"></i> Gestão</a></li>
+            </ul>
+
+
+        </nav>
+  </header>
+
+  <!-- Capa -->
+  <section class="hero" id="inicio">
+    <img src="./assets/santos.png" alt="Banner" class="hero-img">
+  </section>
+
+  <!-- História da escola -->
+  <section class="historia" id="historia">
+    <div class="historia-texto">
+      <h2 class="h2-historia">Nossa História</h2>
+      <p>
+        A Escola Estadual foi fundada em 1953, começando sua trajetória de forma modesta, com apenas 60 salas e
+        um pequeno corpo docente. Desde o início, seu objetivo sempre foi oferecer uma educação de qualidade à
+        comunidade local, plantando as sementes para o desenvolvimento intelectual e cidadão de seus alunos. Ao
+        longo dos anos, a escola passou por um crescimento significativo, tornando-se uma referência em educação
+        na região. Seu compromisso com o ensino evoluiu junto com as necessidades da sociedade, incorporando
+        novas práticas pedagógicas e ampliando sua infraestrutura. Atualmente, a escola atende mais de 700
+        alunos, oferecendo uma formação completa que vai além da sala de aula. São promovidos projetos de
+        inclusão, esportes, cultura e tecnologia, garantindo que todos os estudantes tenham oportunidades de
+        aprendizado e desenvolvimento pessoal. Sempre guiada pelo princípio da qualidade no ensino e pela
+        formação cidadã, a Escola Estadual continua a desempenhar um papel fundamental na construção de futuros
+        cidadãos conscientes e preparados para os desafios do mundo moderno.
+      </p>
+    </div>
+  </section>
+
+  <!-- Entrevista -->
+  <section class="entrevista" id="entrevista">
+    <h2 class="h2-entrevista">Entrevista com a Diretora</h2>
+    <div class="entrevista-conteudo">
+      <div class="entrevista-foto">
+        <img src="assets/Diretora Euripa.jpeg" alt="Foto da diretora">
+      </div>
+      <div class="entrevista-texto">
+        <p>
+          <strong>A Diretora Euripa</strong> compartilha sua visão sobre a escola e sua trajetória:
+          <br><br>
+          “Nossa missão é transformar vidas através da educação. Cada aluno que passa por aqui leva consigo um
+          pedaço da história da escola e deixa sua marca.”
+          <br><br>
+          Segundo a Diretora, a escola busca constantemente se renovar e acompanhar as demandas do mundo moderno:
+          <br><br>
+          “Estamos sempre inovando para oferecer o melhor ensino possível, sem esquecer dos valores humanos
+          que formam cidadãos conscientes e responsáveis.”
+          <br><br>
+          Euripa destaca que, mais do que transmitir conhecimento, a escola tem como objetivo preparar
+          cidadãos completos, que saibam atuar na sociedade com ética, respeito e criatividade. Para ela, cada
+          conquista dos alunos reflete o compromisso contínuo da instituição com qualidade no ensino e com a
+          formação cidadã.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <div class="footer-conteudo">
+      <img src="assets/Projeto Remover fundo.png" alt="Logo da Escola" class="footer-logo">
+      <h3 class="footer-nome">E.E. Alberto Santos Dumont</h3>
+
+      <div class="footer-links">
+        <a href="tel:+551636303424"><i class='bx bx-phone'></i> (16) 3630-3424</a>
+        <a href="https://www.instagram.com/escola.asd/" target="_blank">
+          <i class='bx bxl-instagram'></i> @escola.asd
+        </a>
+      </div>
+      <p class="direitos">© 2025 E.E. Alberto Santos Dumont - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Modal da imagem (mover para fora resolve o piscar) -->
+  <div id="imagem-modal" class="modal">
+    <span class="fechar">&times;</span>
+    <img class="modal-conteudo" id="img-expandida">
+  </div>
+
+  <script src="historia/historia.js" defer></script>
+
+</body>
+</html>
