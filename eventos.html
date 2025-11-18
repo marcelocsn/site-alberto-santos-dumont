@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E.E. Alberto Santos Dumont — Eventos</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./eventos/style-eventos.css">
+</head>
+
+<body id="topo">
+<header>
+  <!-- Botão hamburguer -->
+  <button class="hamburguer" id="hamburguer">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Logo central -->
+  <div class="logo-central">
+    <img src="./eventos/assets/Projeto Remover fundo (3).png" alt="Símbolo da escola" />
+  </div>
+
+  <!-- Nome da escola -->
+  <h1 class="nome-escola">E.E. Alberto Santos Dumont</h1>
+
+  <!-- Menu topo (desktop + horizontal no mobile) -->
+  <nav class="menu-topo">
+    <ul>
+      <li><a href="index.html"><i class='bx bx-home'></i> Início</a></li>
+      <li><a href="#eventos"><i class='bx bx-book'></i> Eventos</a></li>
+     <li><a href="#cafe-literario"><i class="fa-regular fa-image"></i> Galeria</a></li>
+
+
+  </nav>
+
+  <!-- Menu lateral (hambúrguer mobile) -->
+  <nav id="menu-lateral">
+    <ul>
+      <li><a href="index.html"><i class='bx bx-home'></i> Início</a></li>
+      <li><a href="#eventos"><i class='bx bx-book'></i> História</a></li>
+      <li><a href="estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
+      <li><a href="itinerario.html"><i class='bx bx-book'></i> Itinerários</a></li>
+      <li><a href="esporte.html"><i class='bx bxs-basketball'></i> Esporte</a></li>
+      <li><a href="eventos.html"><i class="bx bx-calendar"></i> Eventos</a></li>
+      <li><a href="gestao.html"><i class="bx bx-user"></i> Gestão</a></li>
+            </ul>
+  </nav>
+</header>
+
+  <!-- botão topo -->
+  <button id="btn-topo" title="Voltar ao topo"><i class='bx bx-up-arrow-alt'></i></button>
+
+  <main>
+    <!-- 🔹 Seção hero -->
+    <section class="page-hero">
+      <div>
+        <h2>Eventos — Confira as últimas atividades da nossa escola</h2>
+        <p style="opacity:.9; margin-top:8px">Explore fotos e registros que celebram nossas atividades estudantis e pedagógicas, mostrando toda a energia, criatividade e aprendizado do dia a dia escolar.</p>
+      </div>
+    </section>
+
+    <!-- 🔹 Seção de eventos -->
+    <section class="galeria-wrap" id="eventos">
+
+      <!-- Galeria de Destaques -->
+      <div class="slider" id="slider">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="./eventos/assets/trote.jpeg" alt="Evento 1"
+              onerror="this.onerror=null;this.src='./eventos/assets/trote.webp'">
+            <div class="slide-overlay"><strong>Ensaio para apresentação da feira do livro </strong>
+              <div style="font-size:.95rem;margin-top:6px">Local onde foi organizados um treinamento e preparação para a feira do livro.
+              </div>
+            </div>
+          </div>
+          <div class="slide"> <img src="./eventos/assets/E2.jpg" alt="Evento 2"
+              onerror="this.onerror=null;this.src='./eventos/assets/escola_ribeirao2.webp'">
+            <div class="slide-overlay"><strong>Mostra Cultural</strong>
+              <div style="font-size:.95rem;margin-top:6px">Dança, música e teatro — talentos da comunidade</div>
+            </div>
+          </div>
+          <div class="slide"> <img src="./eventos/assets/E3.jpg" alt="Evento 3"
+              onerror="this.onerror=null;this.src='./eventos/assets/3992217.webp'">
+            <div class="slide-overlay"><strong>Poesia socorro aciole</strong>
+              <div style="font-size:.95rem;margin-top:6px">Teatro onde foram apresentado poesias.</div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- Lista de Eventos -->
+      <div class="eventos-list" id="cafe-literario">  <!-- Card Café Literário -->
+        <article class="evento-card">
+          <div class="evento-body">
+            <h4>1º Café Literário da Escola Alberto Santos Dumont ☕📚</h4>
+            <p>O evento contou com um emocionante recital de poesias e apresentações musicais dos nossos talentosos
+              alunos do Ensino Médio.</p> <img
+              src="./eventos/assets/📚☕ 1º Café Literário da Escola Alberto Santos Dumont ☕📚Hoje vivemos um momento muito especial- (1).jpg"
+              alt="Café Literário 1"> <img
+              src="./eventos/assets/📚☕ 1º Café Literário da Escola Alberto Santos Dumont ☕📚Hoje vivemos um momento muito especial- (2).jpg"
+              alt="Café Literário 2"> <img
+              src="./eventos/assets/📚☕ 1º Café Literário da Escola Alberto Santos Dumont ☕📚Hoje vivemos um momento muito especial- (3).jpg"
+              alt="Café Literário 3"> <img
+              src="./eventos/assets/📚☕ 1º Café Literário da Escola Alberto Santos Dumont ☕📚Hoje vivemos um momento muito especial-.jpg"
+              alt="Café Literário 5">
+          </div>
+        </article> <!-- Card Aula de Ciências -->
+        <article class="evento-card">
+          <div class="evento-body">
+            <h4>Aula Prática de Ciências: Explorando o Mundo das Células</h4>
+            <p>A turma do 6ºB da Escola Alberto Santos Dumont participou de uma aula envolvente sobre células, com a
+              orientação do professor Rodrigo e o apoio da professora Elenice.</p> <img
+              src="./eventos/assets/📚🔬 AULA DE CIÊNCIAS – 6ºB 🔬📚Hoje a turma do 6ºB da Escola Alberto Santos Dumont participou d (1).jpg"
+              alt="Aula Ciências 1"> <img
+              src="./eventos/assets/📚🔬 AULA DE CIÊNCIAS – 6ºB 🔬📚Hoje a turma do 6ºB da Escola Alberto Santos Dumont participou d (2).jpg"
+              alt="Aula Ciências 2"> <img
+              src="./eventos/assets/📚🔬 AULA DE CIÊNCIAS – 6ºB 🔬📚Hoje a turma do 6ºB da Escola Alberto Santos Dumont participou d (3).jpg"
+              alt="Aula Ciências 3"> <img
+              src="./eventos/assets/📚🔬 AULA DE CIÊNCIAS – 6ºB 🔬📚Hoje a turma do 6ºB da Escola Alberto Santos Dumont participou d (5).jpg"
+              alt="Aula Ciências 4"> <img
+              src="./eventos/assets/📚🔬 AULA DE CIÊNCIAS – 6ºB 🔬📚Hoje a turma do 6ºB da Escola Alberto Santos Dumont participou d (6).jpg"
+              alt="Aula Ciências 4">
+          </div>
+        </article> <!-- Card Exposição -->
+        <article class="evento-card">
+          <div class="evento-body">
+            <h4>Exposição de Trabalhos na Diretoria de Ensino</h4>
+            <p>Apresentação de projetos dos alunos na Diretoria de Ensino de Ribeirão Preto, com destaque para talento e
+              criatividade.</p> <img src="./eventos/assets/490353207_2072119853301494_717439748692362327_n.jpg" alt="Exposição 1">
+            <img src="./eventos/assets/490497843_2072120046634808_1055406123558008838_n.jpg" alt="Exposição 2"> <img
+              src="./eventos/assets/490823195_2072119826634830_2819757154767293080_n.jpg" alt="Exposição 3"> <img
+              src="./eventos/assets/490886739_2072119793301500_3047344323474822222_n.jpg" alt="Exposição 4"> <img
+              src="./eventos/assets/490995430_2072119833301496_8874124752268498377_n.jpg" alt="Exposição 4">
+          </div>
+        </article> <!-- Card Biblioteca -->
+        <article class="evento-card">
+          <div class="evento-body">
+            <h4>Biblioteca — Produções Literárias</h4>
+            <p>Atividades realizadas pelos alunos na biblioteca, incluindo confecção de cartazes, leitura e
+              apresentações.</p> <img src="./eventos/assets/b1.jpg" alt="Biblioteca 1"> <img src="./eventos/assets/b2.jpg"
+              alt="Biblioteca 2"> <img src="./eventos/assets/b3.jpg" alt="Biblioteca 3"> <img src="./eventos/assets/b4.jpg"
+              alt="Biblioteca 4"> <img src="./eventos/assets/b5.jpg" alt="Biblioteca 5">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Adicionando segundo carrossel antes do rodapé -->
+    <section class="galeria-wrap galeria-bottom" id="galeria-cards">
+      <div class="galeria-bottom-header">
+        <h3 class="galeria-bottom-title">Galeria de Momentos Especiais</h3>
+        <p class="galeria-bottom-subtitle">Reviva os melhores momentos da nossa comunidade escolar</p>
+      </div>
+      
+      <div class="slider slider-bottom" id="slider-bottom">
+        <div class="slides" id="slides-bottom">
+          <div class="slide"> 
+            <img src="./eventos/assets/1.jpeg" alt="Evento 1" onerror="this.onerror=null;this.src='./assets/trote.webp'">
+            <div class="slide-overlay slide-overlay-bottom">
+              <strong>Festa de São João</strong>
+              <div style="font-size:.95rem;margin-top:6px">Festa onde foi organizada para o dia especial de são joão.</div>
+            </div>
+          </div>
+          <div class="slide"> 
+            <img src="./eventos/assets/2.jpeg" alt="Evento 2" onerror="this.onerror=null;this.src='./eventos/assets/escola_ribeirao2.webp'">
+            <div class="slide-overlay slide-overlay-bottom">
+              
+              
+            </div>
+          </div>
+          <div class="slide"> 
+            <img src="./eventos/assets/4.jpeg" alt="Evento 3" onerror="this.onerror=null;this.src='./eventos/assets/3992217.webp'">
+            <div class="slide-overlay slide-overlay-bottom">
+             
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer id="contato">
+        <div class="footer-conteudo">
+            <img src="./eventos/assets/logo escola.png" alt="Logo da Escola" class="footer-logo">
+            <h3 class="footer-nome">E.E. Alberto Santos Dumont</h3>
+
+            <div class="footer-links">
+                <a href="tel:+551636303424"><i class='bx bx-phone'></i> (16) 3630-3424</a>
+                <a href="https://www.instagram.com/escola.asd/" target="_blank">
+                    <i class='bx bxl-instagram'></i> @escola.asd
+                </a>
+            </div>
+        </div>
+        <p class="direitos">© 2025 E.E. Alberto Santos Dumont - Todos os direitos reservados</p>
+    </footer>
+
+  <div id="lightbox" class="lightbox"> <span class="close">&times;</span> <img id="lightbox-img" src="/placeholder.svg"
+      alt="imagem ampliada"> <button class="prev">&#10094;</button> <button class="next">&#10095;</button> </div>
+  <script src="./eventos/script-eventos.js"></script>
+</body>
+
+</html>
