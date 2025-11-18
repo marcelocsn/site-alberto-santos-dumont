@@ -1,32 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escola Estadual Alberto Santos Dumont</title>
-    <link rel="shortcut icon" href="./gestao assets/logo.png" type="image/x-icon"> <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="#" type="image/x-icon">
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>E.E. Alberto Santos Dumont - Gestão e Educação</title>
+    <link rel="shortcut icon" href="./gestao assets/logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link rel="stylesheet" href="./gestao/style.css">
-    
 </head>
-
-<!-- ===== GALERIA / MODAL ===== -->
-<div id="image-modal" class="modal">
-  <span class="close-modal">&times;</span>
-
-  <img id="modal-img" class="modal-content">
-
-  <!-- SETAS -->
-  <a class="prev">&#10094;</a>
-  <a class="next">&#10095;</a>
-</div>
-
-
 <body>
+    <!-- Header with menu hamburguer and logo -->
     <header>
         <button class="hamburguer" id="hamburguer">
             <span></span>
@@ -41,148 +25,180 @@
         <h1 class="nome-escola">E.E. Alberto Santos Dumont</h1>
 
         <nav class="menu-topo">
+            <ul>
+                <li><a href="#gestao"><i class='bx bx-group'></i> Gestão</a></li>
+                <li><a href="#agradecimento"><i class='bx bx-heart'></i> Agradecimento</a></li>
+                <li><a href="#contato"><i class='bx bx-phone'></i> Contato</a></li>
+            </ul>
+        </nav>
+
+        <nav id="menu-lateral">
+            <ul>
+        <li><a href="./index.html"><i class='bx bx-home'></i> Início</a></li>
+        <li><a href="#eventos"><i class='bx bx-book'></i> História</a></li>
+        <li><a href="../estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
+        <li><a href="#eventos"><i class='bx bx-book'></i> Itinerários</a></li>
+        <li><a href="https://site2.com"><i class='bx bxs-basketball'></i> Esporte</a></li>
+        <li><a href="#galeria-cards"><i class="bx bx-calendar"></i> Eventos</a></li>
+        <li><a href="#galeria-cards"><i class="bx bx-user"></i> Gestão</a></li>
+    </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar menu -->
+<nav class="menu-lateral" id="menu-lateral">
     <ul>
-        <li><a href="#gestao"><i class='bx bx-group'></i> Gestão</a></li>
-        <li><a href="#agradecimento"><i class='bx bx-heart'></i> Agradecimento</a></li>
-        <li><a href="#contato"><i class='bx bx-phone'></i> Contato</a></li>
+        <li><a href="./index.html"><i class='bx bx-home'></i> Início</a></li>
+        <li><a href="#eventos"><i class='bx bx-book'></i> História</a></li>
+        <li><a href="../estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
+        <li><a href="#eventos"><i class='bx bx-book'></i> Itinerários</a></li>
+        <li><a href="https://site2.com"><i class='bx bxs-basketball'></i> Esporte</a></li>
+        <li><a href="#galeria-cards"><i class="bx bx-calendar"></i> Eventos</a></li>
+        <li><a href="#galeria-cards"><i class="bx bx-user"></i> Gestão</a></li>
     </ul>
 </nav>
 
 
-        <nav id="menu-lateral">
-            <ul>
-                <li><a href="./index.html"><i class='bx bx-home'></i> Início</a></li>
-      <li><a href="#eventos"><i class='bx bx-book'></i> História</a></li>
-      <li><a href="../estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
-      <li><a href="#eventos"><i class='bx bx-book'></i> Itinerários</a></li>
-      <li><a href="https://site2.com"><i class='bx bxs-basketball'></i> Esporte</a></li>
-      <li><a href="#galeria-cards"><i class="bx bx-calendar"></i> Eventos</a></li>
-      <li><a href="#galeria-cards"><i class="bx bx-user"></i> Gestão</a></li>
-            </ul>
+    <!-- Overlay to close menu -->
+    <div id="overlay"></div>
 
-    </header>
+    <!-- Modal for gallery -->
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img id="modal-img" class="modal-content">
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
 
-<nav class="menu-lateral" id="menu-lateral">
-  <ul>
-    <li><a href="#inicio"><i class='bx bx-home'></i> Início</a></li>
-    <li><a href="#sobre"><i class='bx bx-book'></i> Sobre a Escola</a></li>
-    <li><a href="#gestao"><i class='bx bx-group'></i> Gestão</a></li>
-    <li><a href="#endereco"><i class="fa-regular fa-map"></i> Endereço</a></li>
-    <li><a href="#regimento"><i class="fa-regular fa-file"></i> Regimento</a></li>
-    <li><a href="#contato"><i class='bx bx-phone'></i> Contato</a></li>
-  </ul>
-</nav>
-
-
-    <section class="home" id="inicio">
-      <div class="home-content">
-        <h1>Conheça a <span>Gestão da Escola</span></h1>
-        
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container">
+                <div class="hero__content">
+                    <h2>Conheça a <span class="highlight">Gestão Escolar</span></h2>
+                    <div class="hero__cta">
+                        <a href="#gestao" class="btn btn--primary">Conhecer Nossa Equipe</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-<div class="portfolio-container">
+        <!-- Seção Gestão -->
+        <section class="section section--light" id="gestao">
+            <div class="container">
+                <div class="section__header">
+                    <h2>Nossa <span class="highlight">Gestão</span></h2>
+                    <p>Conheça os profissionais da gestão da escola Alberto Santos Dumont</p>
+                </div>
 
-    <!-- Diretora -->
-    <div class="portfolio-box">
-        <div class="portfolio-image">
-            <img src="./gestao assets/Euripa.png" alt="Diretora Euripa">
+                <div class="gallery">
+                    <!-- Diretora -->
+                    <div class="card">
+                        <div class="card__image">
+                            <img src="./gestao assets/Euripa.png" alt="Diretora Euripa">
+                            <div class="card__badge">Diretora</div>
+                        </div>
+                        <div class="card__content">
+                            <h3>Euripa de Oliveira</h3>
+                            <p>Diretora</p>
+                        </div>
+                    </div>
+
+                    <!-- Vice-Diretora -->
+                    <div class="card">
+                        <div class="card__image">
+                            <img src="./gestao assets/vice-diretora.jpg" alt="Vice-Diretora">
+                            <div class="card__badge">Vice-Diretora</div>
+                        </div>
+                        <div class="card__content">
+                            <h3>Gisele Heloisa</h3>
+                            <p>Vice-Direção</p>
+                        </div>
+                    </div>
+
+                    <!-- Coordenador Médio -->
+                    <div class="card">
+                        <div class="card__image">
+                            <img src="./gestao assets/coordenador-medio.jpg" alt="Coordenador Pedagógico">
+                            <div class="card__badge">Coordenador</div>
+                        </div>
+                        <div class="card__content">
+                            <h3>Randal</h3>
+                            <p>Coordenação Ensino Médio</p>
+                        </div>
+                    </div>
+
+                    <!-- Coordenador Fundamental -->
+                    <div class="card">
+                        <div class="card__image">
+                            <img src="./gestao assets/Coordenador-fundamental.jpg" alt="Coordenador Fundamental">
+                            <div class="card__badge">Coordenador</div>
+                        </div>
+                        <div class="card__content">
+                            <h3>José Henrique</h3>
+                            <p>Coordenação Ensino Fundamental</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Agradecimento -->
+        <section class="section section--accent" id="agradecimento">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <h2>Nosso <span class="highlight">Agradecimento</span></h2>
+                </div>
+
+                <div class="gratitude">
+                    <p class="gratitude__text">
+                        A Primeira Turma do Curso Técnico em Análise e Desenvolvimento de Sistemas de 2025, agradece à gestão da escola pela oportunidade de, não apenas se formar em um excelente curso técnico profissional, mas também pela confiança em nossa capacidade para a criação do site institucional da escola.
+                    </p>
+
+                    <div class="gratitude__card">
+                        <div class="card card--horizontal">
+                            <div class="card__image card__image--large">
+                                <img src="./gestao assets/turma3ds.jpeg" alt="Turma 3DS 2025">
+                            </div>
+                            <div class="card__content">
+                                <h3>Primeira Turma do Itinerário Técnico</h3>
+                                <p>Análise e Desenvolvimento de Sistemas - 2025</p>
+                                <p class="gratitude__message">O início de uma nova era na educação profissional da escola.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <blockquote class="gratitude__quote">
+                        "Muito obrigado pela oportunidade de fazermos parte dessa história!"
+                        <footer>— Turma do Terceiro ano de Análise e Desenvolvimento de Sistemas de 2025</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="footer-conteudo">
+            <img src="gestao assets/logo.png" alt="Logo da Escola" class="footer-logo">
+            <h3 class="footer-nome">E.E. Alberto Santos Dumont</h3>
+
+            <div class="footer-links">
+                <a href="tel:+551636303424"><i class='bx bx-phone'></i> (16) 3630-3424</a>
+                <a href="https://www.instagram.com/escola.asd/" target="_blank">
+                    <i class='bx bxl-instagram'></i> @escola.asd
+                </a>
+            </div>
         </div>
-        <div class="portfolio-layer">
-            <h4>Diretora</h4>
-            <p>Euripa de Oliveira</p>
-        </div>
-    </div>
+        <p class="direitos">© 2025 E.E. Alberto Santos Dumont - Todos os direitos reservados</p>
+    </footer>
 
-    <!-- Vice-Diretora -->
-    <div class="portfolio-box">
-        <div class="portfolio-image">
-            <img src="./gestao assets/vice-diretora.jpg" alt="Vice-Diretora Gisele">
-        </div>
-        <div class="portfolio-layer">
-            <h4>Vice-Diretora</h4>
-            <p>Gisele Heloisa</p>
-        </div>
-    </div>
+    <!-- Button to go back to top -->
+    <button id="btn-topo" title="Voltar ao topo">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
 
-    <!-- Coordenador Ensino Médio (abaixo da Diretora) -->
-    <div class="portfolio-box">
-        <div class="portfolio-image">
-            <img src="./gestao assets/coordenador-medio.jpg" alt="Coordenador Pedagógico do Ensino Médio - Randal">
-        </div>
-        <div class="portfolio-layer">
-            <h4>Coordenador Pedagógico do Ensino Médio</h4>
-            <p>Randal</p>
-        </div>
-    </div>
-
-    <!-- Coordenador Fundamental (lado direito do coordenador médio) -->
-    <div class="portfolio-box">
-        <div class="portfolio-image">
-            <img src="./gestao assets/Coordenador-fundamental.jpg" alt="Coordenador Fundamental - José Henrique">
-        </div>
-        <div class="portfolio-layer">
-            <h4>Coordenador Pedagógico do Ensino Fundamental</h4>
-            <p>José Henrique</p>
-        </div>
-    </div>
-</div>
-
-
-    </section>
-
-
-<section class="gratitude" id="agradecimento">
-      <div class="gratitude-content">
-        <h2>Nosso <span>Agradecimento</span></h2>
-        <div class="description">
-          <p>A Primeira Turma do Curso Técnico em Análise e Desenvolvimento de Sistemas de 2025, agradece à gestão da escola pela oportunidade de, não apenas se formar em um excelente curso técnico profissional, mas também pela confiança em nossa capacidade para a criação do site institucional da escola.</p>
-          
-          <p>Com gratidão, <strong>Turma do Terceiro ano de Análise e Desenvolvimento de Sistemas de 2025</strong></p>
-        </div>
-        <p>Agradecemos por acreditarem no nosso potencial e por nos proporcionarem uma base sólida de conhecimento,
-          prática e desenvolvimento humano.</p>
-
-          <div class="portfolio-box">
-          <div class="portfolio-image">
-            <img src="./gestao assets/turma3ds.jpeg" alt="Turma 3DS">
-          </div>
-          <div class="portfolio-layer">
-            <h4>A primeira turma do itinerário técnico de Análise e Desenvolvimento de Sistemas de 2025</h4>
-            <p>Conheça a primeira sala do itinerário técnico de Análise e Desenvolvimento de Sistemas a se formar em 2025. O início de tudo, o início de uma nova era.</p>
-          </div>
-        </div>
-
-        <div class="gratitude-message">
-          <blockquote>
-            "Muito obrigado pela oportunidade e por acreditarem em nós!"
-          </blockquote>
-          <cite>- Turma do Terceiro ano de Desenvolvimento de Sistemas de 2025</cite>
-        </div>
-      </div>
-    </section>
-  </main>
-
-
-  <footer id="contato">
-    <div class="footer-conteudo">
-      <img src="./gestao assets/logo.png" alt="Logo da Escola" class="footer-logo">
-      <h3 class="footer-nome">E.E. Alberto Santos Dumont</h3>
-
-      <div class="footer-links">
-        <a href="tel:+551636303424"><i class='bx bx-phone'></i> (16) 3630-3424</a>
-        <a href="https://www.instagram.com/escola.asd/" target="_blank">
-          <i class='bx bxl-instagram'></i> @escola.asd
-        </a>
-      </div>
-    </div>
-    <p class="direitos">© 2025 E.E. Alberto Santos Dumont - Todos os direitos reservados</p>
-  </footer>
-
-
-  <button id="btn-topo" title="Voltar ao topo">
-    <i class='bx bx-up-arrow-alt'></i>
-  </button>
-
-  <script src="gestao/script.js"></script>
+    <script src="./gestao/script.js"></script>
 </body>
 </html>
