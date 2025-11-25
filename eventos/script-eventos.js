@@ -7,6 +7,54 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.classList.toggle("ativo")
   })
 
+  const hero = document.getElementById("hero-parallax")
+  const heroContent = hero?.querySelector(".hero-content")
+
+  if (hero && heroContent) {
+    window.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX / window.innerWidth
+      const mouseY = e.clientY / window.innerHeight
+
+      const moveX = (mouseX - 0.5) * 20
+      const moveY = (mouseY - 0.5) * 20
+
+      hero.style.transform = `perspective(1000px) rotateY(${moveX * 0.5}deg) rotateX(${-moveY * 0.5}deg)`
+      heroContent.style.transform = `translateZ(30px) translateX(${-moveX}px) translateY(${-moveY}px)`
+    })
+
+    hero.addEventListener("mouseleave", () => {
+      hero.style.transform = ""
+      heroContent.style.transform = "translateZ(20px)"
+    })
+  }
+
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px",
+  }
+
+  const animateOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in")
+        // Remove observer após animar para melhor performance
+        animateOnScroll.unobserve(entry.target)
+      }
+    })
+  }, observerOptions)
+
+  // Observar todos os cards de eventos
+  const eventoCards = document.querySelectorAll(".evento-card[data-animate]")
+  eventoCards.forEach((card) => {
+    animateOnScroll.observe(card)
+  })
+
+  // Observar items da timeline
+  const timelineItems = document.querySelectorAll(".timeline-item")
+  timelineItems.forEach((item) => {
+    animateOnScroll.observe(item)
+  })
+
   // botão topo
   const btnTopo = document.getElementById("btn-topo")
   window.addEventListener("scroll", () => {
@@ -48,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let imagensAtuais = []
   let idxAtual = 0
 
-  document.querySelectorAll(".evento-card").forEach((card) => {
+  document.querySelectorAll(".evento-card:not(.evento-card-destaque)").forEach((card) => {
     const imgs = Array.from(card.querySelectorAll("img"))
     imgs.forEach((img, i) => {
       img.style.cursor = "pointer"
@@ -70,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.cursor = "pointer"
       img.addEventListener("click", (e) => {
         e.stopPropagation()
-        console.log("[v0] Imagem do carrossel clicada, índice:", index)
         imagensAtuais = imagensCarrossel
         idxAtual = index
         mostrarImagem()
@@ -80,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function mostrarImagem() {
-    console.log("[v0] Mostrando imagem:", imagensAtuais[idxAtual])
     lightboxImg.src = imagensAtuais[idxAtual]
   }
 
@@ -113,4 +159,230 @@ document.addEventListener("DOMContentLoaded", () => {
     idxAtual = (idxAtual + 1) % imagensAtuais.length
     mostrarImagem()
   })
+
+  const slideshowMode = document.getElementById("slideshow-mode")
+  const slideshowImage = document.getElementById("slideshow-image")
+  const slideshowTitle = document.getElementById("slideshow-title")
+  const slideshowDescription = document.getElementById("slideshow-description")
+  const slideshowCurrent = document.getElementById("slideshow-current")
+  const slideshowTotal = document.getElementById("slideshow-total")
+  const slideshowProgressBar = document.querySelector(".slideshow-progress-bar")
+  const slideshowPlayPause = document.getElementById("slideshow-play-pause")
+  const slideshowPrev = document.getElementById("slideshow-prev")
+  const slideshowNext = document.getElementById("slideshow-next")
+  const slideshowClose = document.getElementById("slideshow-close")
+
+  let slideshowData = []
+  let slideshowIndex = 0
+  let slideshowInterval = null
+  let slideshowPlaying = true
+  const slideshowDuration = 5000 // 5 segundos por slide
+  let progressInterval = null
+
+  // Coletar todos os eventos para o slideshow
+  function coletarEventos() {
+    const eventos = []
+    document.querySelectorAll(".evento-card").forEach((card) => {
+      const titulo = card.querySelector("h4")?.textContent || "Evento"
+      const descricao = card.querySelector("p")?.textContent || ""
+      const imagens = Array.from(card.querySelectorAll("img")).map((img) => img.src)
+
+      if (imagens.length > 0) {
+        // Para cada evento, adiciona cada imagem como um slide
+        imagens.forEach((imagemSrc) => {
+          eventos.push({
+            titulo,
+            descricao,
+            imagem: imagemSrc,
+          })
+        })
+      }
+    })
+    return eventos
+  }
+
+  // Iniciar apresentação
+  function iniciarApresentacao() {
+    slideshowData = coletarEventos()
+    if (slideshowData.length === 0) return
+
+    slideshowIndex = 0
+    slideshowPlaying = true
+    slideshowMode.classList.add("active")
+    document.body.style.overflow = "hidden"
+
+    slideshowTotal.textContent = slideshowData.length
+    mostrarSlide()
+    iniciarAutoPlay()
+  }
+
+  // Mostrar slide atual
+  function mostrarSlide() {
+    if (slideshowData.length === 0) return
+
+    const slide = slideshowData[slideshowIndex]
+    slideshowImage.src = slide.imagem
+    slideshowTitle.textContent = slide.titulo
+    slideshowDescription.textContent = slide.descricao
+    slideshowCurrent.textContent = slideshowIndex + 1
+
+    // Reset da animação
+    slideshowImage.style.animation = "none"
+    void slideshowImage.offsetWidth // Trigger reflow
+    slideshowImage.style.animation = "slideIn 0.6s ease"
+  }
+
+  // Próximo slide
+  function proximoSlide() {
+    slideshowIndex = (slideshowIndex + 1) % slideshowData.length
+    mostrarSlide()
+    resetarProgresso()
+  }
+
+  // Slide anterior
+  function slideAnterior() {
+    slideshowIndex = (slideshowIndex - 1 + slideshowData.length) % slideshowData.length
+    mostrarSlide()
+    resetarProgresso()
+  }
+
+  // Auto play
+  function iniciarAutoPlay() {
+    if (slideshowInterval) clearInterval(slideshowInterval)
+    if (progressInterval) clearInterval(progressInterval)
+
+    if (slideshowPlaying) {
+      slideshowInterval = setInterval(proximoSlide, slideshowDuration)
+      iniciarProgresso()
+      slideshowPlayPause.innerHTML = "<i class='bx bx-pause'></i>"
+      slideshowPlayPause.title = "Pausar"
+    }
+  }
+
+  // Pausar/retomar
+  function togglePlayPause() {
+    slideshowPlaying = !slideshowPlaying
+
+    if (slideshowPlaying) {
+      iniciarAutoPlay()
+    } else {
+      clearInterval(slideshowInterval)
+      clearInterval(progressInterval)
+      slideshowPlayPause.innerHTML = "<i class='bx bx-play'></i>"
+      slideshowPlayPause.title = "Continuar"
+    }
+  }
+
+  // Barra de progresso
+  function iniciarProgresso() {
+    if (progressInterval) clearInterval(progressInterval)
+    slideshowProgressBar.style.width = "0%"
+
+    const incremento = 100 / (slideshowDuration / 50) // Atualizar a cada 50ms
+    let progresso = 0
+
+    progressInterval = setInterval(() => {
+      progresso += incremento
+      slideshowProgressBar.style.width = Math.min(progresso, 100) + "%"
+
+      if (progresso >= 100) {
+        clearInterval(progressInterval)
+      }
+    }, 50)
+  }
+
+  function resetarProgresso() {
+    if (progressInterval) clearInterval(progressInterval)
+    if (slideshowPlaying) {
+      iniciarProgresso()
+    } else {
+      slideshowProgressBar.style.width = "0%"
+    }
+  }
+
+  // Fechar apresentação
+  function fecharApresentacao() {
+    slideshowMode.classList.remove("active")
+    document.body.style.overflow = ""
+    clearInterval(slideshowInterval)
+    clearInterval(progressInterval)
+    slideshowPlaying = true
+  }
+
+  // Event listeners do slideshow
+  slideshowPlayPause.addEventListener("click", togglePlayPause)
+  slideshowPrev.addEventListener("click", () => {
+    slideAnterior()
+    if (slideshowPlaying) {
+      clearInterval(slideshowInterval)
+      slideshowInterval = setInterval(proximoSlide, slideshowDuration)
+    }
+  })
+  slideshowNext.addEventListener("click", () => {
+    proximoSlide()
+    if (slideshowPlaying) {
+      clearInterval(slideshowInterval)
+      slideshowInterval = setInterval(proximoSlide, slideshowDuration)
+    }
+  })
+  slideshowClose.addEventListener("click", fecharApresentacao)
+
+  // Teclas de atalho para o slideshow
+  document.addEventListener("keydown", (e) => {
+    if (slideshowMode.classList.contains("active")) {
+      if (e.key === "Escape") fecharApresentacao()
+      if (e.key === "ArrowLeft") {
+        slideAnterior()
+        if (slideshowPlaying) {
+          clearInterval(slideshowInterval)
+          slideshowInterval = setInterval(proximoSlide, slideshowDuration)
+        }
+      }
+      if (e.key === "ArrowRight") {
+        proximoSlide()
+        if (slideshowPlaying) {
+          clearInterval(slideshowInterval)
+          slideshowInterval = setInterval(proximoSlide, slideshowDuration)
+        }
+      }
+      if (e.key === " ") {
+        e.preventDefault()
+        togglePlayPause()
+      }
+    }
+  })
+
+  // Conectar botão "Ver Todos os Eventos" ao slideshow
+  const btnVerTodos = document.querySelector(".btn-ver-todos")
+  if (btnVerTodos) {
+    btnVerTodos.addEventListener("click", (e) => {
+      e.preventDefault()
+      iniciarApresentacao()
+    })
+  }
 })
+
+const frases = [
+  "A educação transforma realidades — e você faz parte disso.",
+  "O conhecimento abre portas que ninguém pode fechar.",
+  "Cada dia na escola é uma oportunidade para crescer.",
+  "A leitura é a viagem mais incrível que alguém pode fazer.",
+  "Estudar é plantar sementes para colher um futuro melhor.",
+  "O esforço de hoje constrói as conquistas de amanhã."
+];
+
+let indexFrase = 0;
+const fraseElemento = document.getElementById("frase-texto");
+
+function trocarFrase() {
+  fraseElemento.classList.remove("mostra-frase");
+
+  setTimeout(() => {
+    fraseElemento.textContent = frases[indexFrase];
+    fraseElemento.classList.add("mostra-frase");
+    indexFrase = (indexFrase + 1) % frases.length;
+  }, 400);
+}
+
+trocarFrase(); 
+setInterval(trocarFrase, 6000);

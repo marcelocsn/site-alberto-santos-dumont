@@ -32,21 +32,20 @@
     <ul>
       <li><a href="../index.html"><i class='bx bx-home'></i> Início</a></li>
       <li><a href="#eventos"><i class='bx bx-book'></i> Eventos</a></li>
-     <li><a href="#cafe-literario"><i class="fa-regular fa-image"></i> Galeria</a></li>
-
-
+      <li><a href="#cafe-literario"><i class="fa-regular fa-image"></i> Galeria</a></li>
+    </ul>
   </nav>
 
   <!-- Menu lateral (hambúrguer mobile) -->
   <nav id="menu-lateral">
     <ul>
-      <li><a href="../index.html"><i class='bx bx-home'></i> Início</a></li>
-      <li><a href="#eventos"><i class='bx bx-book'></i> História</a></li>
-      <li><a href="../estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
-      <li><a href="#eventos"><i class='bx bx-book'></i> Itinerários</a></li>
-      <li><a href="https://site2.com"><i class='bx bxs-basketball'></i> Esporte</a></li>
-      <li><a href="#galeria-cards"><i class="bx bx-calendar"></i> Eventos</a></li>
-      <li><a href="#galeria-cards"><i class="bx bx-user"></i> Colaboladores</a></li>
+        <li><a href="../index.html"><i class='bx bx-home'></i> Início</a></li>
+      <li><a href="../história.html"><i class='bx bx-book'></i> História</a></li>
+       <li><a href="../estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
+       <li><a href="../itinerario.html"><i class='bx bx-book'></i> Itinerários</a></li>
+       <li><a href="../esporte.html"><i class='bx bxs-basketball'></i> Esporte</a></li>
+     <li><a href="eventos.html"><i class="bx bx-calendar"></i> Eventos</a></li>
+      <li><a href="../gestao.html"><i class="bx bx-user"></i> Gestão</a></li>
     </ul>
   </nav>
 </header>
@@ -55,43 +54,76 @@
   <button id="btn-topo" title="Voltar ao topo"><i class='bx bx-up-arrow-alt'></i></button>
 
   <main>
-    <!-- 🔹 Seção hero -->
-    <section class="page-hero">
-      <div>
+    <!-- Adicionando parallax effect no hero -->
+    <section class="page-hero" id="hero-parallax">
+      <div class="hero-content">
         <h2>Eventos — Confira as últimas atividades da nossa escola</h2>
         <p style="opacity:.9; margin-top:8px">Explore fotos e registros que celebram nossas atividades estudantis e pedagógicas, mostrando toda a energia, criatividade e aprendizado do dia a dia escolar.</p>
+      </div>
+    </section>
+
+    <!-- Adicionando linha do tempo cronológica -->
+    <section class="timeline-section" id="timeline">
+      <div class="timeline-header">
+        <h3>Linha do Tempo dos Eventos</h3>
+        <p>Acompanhe a jornada dos nossos eventos ao longo do ano</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item" data-date="Agosto 2025">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>1º Café Literário</h4>
+            <p>Recital de poesias e apresentações musicais dos alunos do Ensino Médio.</p>
+            <a href="#cafe-literario" class="timeline-link">Ver fotos</a>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-date="Setembro 2025">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>Aula Prática de Ciências</h4>
+            <p>Turma do 6ºB explorou o mundo das células com atividades práticas.</p>
+            <a href="#cafe-literario" class="timeline-link">Ver fotos</a>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-date="Novembro 2024">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>Exposição na Diretoria de Ensino</h4>
+            <p>Apresentação de projetos dos alunos destacando talento e criatividade.</p>
+            <a href="#cafe-literario" class="timeline-link">Ver fotos</a>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-date="Julho 2024">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>Festa Junina</h4>
+            <p>Danças típicas, comidas deliciosas e muita alegria na festa tradicional.</p>
+            <a href="#cafe-literario" class="timeline-link">Ver fotos</a>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-date="Agosto 2025">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>Atividades na Biblioteca</h4>
+            <p>Produções literárias, cartazes e apresentações criativas dos alunos.</p>
+            <a href="#cafe-literario" class="timeline-link">Ver fotos</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- 🔹 Seção de eventos -->
     <section class="galeria-wrap" id="eventos">
 
-      <!-- Galeria de Destaques -->
-      <div class="slider" id="slider">
-        <div class="slides" id="slides">
-          <div class="slide"><img src="./assets/trote.jpeg" alt="Evento 1"
-              onerror="this.onerror=null;this.src='./assets/trote.webp'">
-            <div class="slide-overlay"><strong>Ensaio para apresentação da feira do livro </strong>
-              <div style="font-size:.95rem;margin-top:6px">Local onde foi organizados um treinamento e preparação para a feira do livro.
-              </div>
-            </div>
-          </div>
-          <div class="slide"> <img src="./assets/E2.jpg" alt="Evento 2"
-              onerror="this.onerror=null;this.src='./assets/escola_ribeirao2.webp'">
-            <div class="slide-overlay"><strong>Mostra Cultural</strong>
-              <div style="font-size:.95rem;margin-top:6px">Dança, música e teatro — talentos da comunidade</div>
-            </div>
-          </div>
-          <div class="slide"> <img src="./assets/E3.jpg" alt="Evento 3"
-              onerror="this.onerror=null;this.src='./assets/3992217.webp'">
-            <div class="slide-overlay"><strong>Poesia socorro aciole</strong>
-              <div style="font-size:.95rem;margin-top:6px">Teatro onde foram apresentado poesias.</div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- Lista de Eventos -->
+      <!-- Lista de Eventos -->
+      <!-- Adicionando data-animate para animação de scroll -->
       <div class="eventos-list" id="cafe-literario">  <!-- Card Café Literário -->
-        <article class="evento-card">
+        <article class="evento-card" data-animate>
           <div class="evento-body">
             <h4>1º Café Literário da Escola Alberto Santos Dumont ☕📚</h4>
             <p>O evento contou com um emocionante recital de poesias e apresentações musicais dos nossos talentosos
@@ -106,7 +138,7 @@
               alt="Café Literário 5">
           </div>
         </article> <!-- Card Aula de Ciências -->
-        <article class="evento-card">
+        <article class="evento-card" data-animate>
           <div class="evento-body">
             <h4>Aula Prática de Ciências: Explorando o Mundo das Células</h4>
             <p>A turma do 6ºB da Escola Alberto Santos Dumont participou de uma aula envolvente sobre células, com a
@@ -123,7 +155,7 @@
               alt="Aula Ciências 4">
           </div>
         </article> <!-- Card Exposição -->
-        <article class="evento-card">
+        <article class="evento-card" data-animate>
           <div class="evento-body">
             <h4>Exposição de Trabalhos na Diretoria de Ensino</h4>
             <p>Apresentação de projetos dos alunos na Diretoria de Ensino de Ribeirão Preto, com destaque para talento e
@@ -134,7 +166,7 @@
               src="assets/490995430_2072119833301496_8874124752268498377_n.jpg" alt="Exposição 4">
           </div>
         </article> <!-- Card Biblioteca -->
-        <article class="evento-card">
+        <article class="evento-card" data-animate>
           <div class="evento-body">
             <h4>Biblioteca — Produções Literárias</h4>
             <p>Atividades realizadas pelos alunos na biblioteca, incluindo confecção de cartazes, leitura e
@@ -143,43 +175,48 @@
               alt="Biblioteca 4"> <img src="assets/b5.jpg" alt="Biblioteca 5">
           </div>
         </article>
-      </div>
-    </section>
 
-    <!-- Adicionando segundo carrossel antes do rodapé -->
-    <section class="galeria-wrap galeria-bottom" id="galeria-cards">
-      <div class="galeria-bottom-header">
-        <h3 class="galeria-bottom-title">Galeria de Momentos Especiais</h3>
-        <p class="galeria-bottom-subtitle">Reviva os melhores momentos da nossa comunidade escolar</p>
-      </div>
-      
-      <div class="slider slider-bottom" id="slider-bottom">
-        <div class="slides" id="slides-bottom">
-          <div class="slide"> 
-            <img src="./assets/1.jpeg" alt="Evento 1" onerror="this.onerror=null;this.src='./assets/trote.webp'">
-            <div class="slide-overlay slide-overlay-bottom">
-              <strong>Festa de São João</strong>
-              <div style="font-size:.95rem;margin-top:6px">Festa onde foi organizada para o dia especial de são joão.</div>
-            </div>
+        <!-- Adicionando novo card de Halloween -->
+        <article class="evento-card" data-animate>
+          <div class="evento-body">
+            <h4>Festa de Halloween 🎃👻</h4>
+            <p>Celebração especial de Halloween com fantasias criativas, decorações assustadoras e muita diversão. Os alunos participaram de atividades temáticas, concurso de fantasias e brincadeiras especiais para comemorar a data.</p>
+            <img src="assets/🎃 Fotos do Halloween 2025! 👻📸Um momento de descontração e divertimento, onde todos puderam re (1).jpg" alt="Halloween 1">
+            <img src="assets/🎃 Fotos do Halloween 2025! 👻📸Um momento de descontração e divertimento, onde todos puderam re (2).jpg" alt="Halloween 2">
+            <img src="assets/🎃 Fotos do Halloween 2025! 👻📸Um momento de descontração e divertimento, onde todos puderam re (3).jpg" alt="Halloween 3">
+            <img src="assets/🎃 Fotos do Halloween 2025! 👻📸Um momento de descontração e divertimento, onde todos puderam re (4).jpg" alt="Halloween 4">
+            <img src="assets/🎃 Fotos do Halloween 2025! 👻📸Um momento de descontração e divertimento, onde todos puderam re (6).jpg" alt="Halloween 5">
+            <img src="assets/🎃 Fotos do Halloween 2025! 👻📸Um momento de descontração e divertimento, onde todos puderam re (7).jpg" alt="Halloween 5">
+            <img src="assets/🎃 Fotos do Halloween 2025! 👻📸Um momento de descontração e divertimento, onde todos puderam re.jpg" alt="Halloween 5">
           </div>
-          <div class="slide"> 
-            <img src="./assets/2.jpeg" alt="Evento 2" onerror="this.onerror=null;this.src='./assets/escola_ribeirao2.webp'">
-            <div class="slide-overlay slide-overlay-bottom">
-              
-              
-            </div>
+        </article>
+
+        <!-- Adicionando novo card do Dia das Crianças e Descompressão SAEB -->
+        <article class="evento-card" data-animate>
+          <div class="evento-body">
+            <h4>Dia das Crianças e Descompressão para o SAEB 🎉📚</h4>
+            <p>Um dia especial dedicado à celebração do Dia das Crianças e preparação para o SAEB! Os alunos participaram de atividades lúdicas, jogos recreativos e momentos de descontração, promovendo o bem-estar e reduzindo a ansiedade antes das avaliações. Foi um momento de alegria, brincadeiras e muito aprendizado!</p>
+            <img src="assets/🎉 Comemorando o Dia das Crianças e o Dia da Descompressão para o SAEB! 🎉Hoje foi um dia especi (1).jpg" alt="Dia das Crianças 1">
+            <img src="assets/🎉 Comemorando o Dia das Crianças e o Dia da Descompressão para o SAEB! 🎉Hoje foi um dia especi (2).jpg" alt="Dia das Crianças 2">
+            <img src="assets/🎉 Comemorando o Dia das Crianças e o Dia da Descompressão para o SAEB! 🎉Hoje foi um dia especi (3).jpg" alt="Dia das Crianças 3">
+            <img src="assets/🎉 Comemorando o Dia das Crianças e o Dia da Descompressão para o SAEB! 🎉Hoje foi um dia especi (4).jpg" alt="Dia das Crianças 4">
+            <img src="assets/🎉 Comemorando o Dia das Crianças e o Dia da Descompressão para o SAEB! 🎉Hoje foi um dia especi (5).jpg" alt="Dia das Crianças 5">
+            <img src="assets/🎉 Comemorando o Dia das Crianças e o Dia da Descompressão para o SAEB! 🎉Hoje foi um dia especi (6).jpg" alt="Dia das Crianças 6">
+            <img src="assets/🎉 Comemorando o Dia das Crianças e o Dia da Descompressão para o SAEB! 🎉Hoje foi um dia especi.jpg" alt="Dia das Crianças 7">
           </div>
-          <div class="slide"> 
-            <img src="./assets/4.jpeg" alt="Evento 3" onerror="this.onerror=null;this.src='./assets/3992217.webp'">
-            <div class="slide-overlay slide-overlay-bottom">
-             
-              
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
+<section class="frases-motivacionais">
+  <div class="frase-container">
+    <i class='bx bxs-quote-alt-left'></i>
+    <p id="frase-texto"></p>
+    <i class='bx bxs-quote-alt-right'></i>
+  </div>
+</section>
+
   </main>
+
   
   <footer id="contato">
         <div class="footer-conteudo">
@@ -198,6 +235,42 @@
 
   <div id="lightbox" class="lightbox"> <span class="close">&times;</span> <img id="lightbox-img" src="/placeholder.svg"
       alt="imagem ampliada"> <button class="prev">&#10094;</button> <button class="next">&#10095;</button> </div>
+
+  <!-- Adicionando estrutura HTML para modo apresentação -->
+  <div id="slideshow-mode" class="slideshow-mode">
+    <div class="slideshow-controls">
+      <button class="slideshow-btn" id="slideshow-play-pause" title="Pausar">
+        <i class='bx bx-pause'></i>
+      </button>
+      <button class="slideshow-btn" id="slideshow-prev" title="Anterior">
+        <i class='bx bx-chevron-left'></i>
+      </button>
+      <button class="slideshow-btn" id="slideshow-next" title="Próximo">
+        <i class='bx bx-chevron-right'></i>
+      </button>
+      <button class="slideshow-btn" id="slideshow-close" title="Sair da apresentação">
+        <i class='bx bx-x'></i>
+      </button>
+    </div>
+    
+    <div class="slideshow-content">
+      <div class="slideshow-image-container">
+        <img id="slideshow-image" src="/placeholder.svg" alt="Evento">
+      </div>
+      <div class="slideshow-info">
+        <h3 id="slideshow-title"></h3>
+        <p id="slideshow-description"></p>
+        <div class="slideshow-counter">
+          <span id="slideshow-current">1</span> / <span id="slideshow-total">1</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="slideshow-progress">
+      <div class="slideshow-progress-bar"></div>
+    </div>
+  </div>
+
   <script src="script-eventos.js"></script>
 </body>
 
