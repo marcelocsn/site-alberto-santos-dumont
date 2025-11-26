@@ -38,11 +38,11 @@
         <nav id="menu-lateral">
             <ul>
                <li><a href="index.html"><i class='bx bx-home'></i> Início</a></li>
-      <li><a href="#eventos"><i class='bx bx-book'></i> História</a></li>
+      <li><a href="história.html"><i class='bx bx-book'></i> História</a></li>
       <li><a href="estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
       <li><a href="itinerario.html"><i class='bx bx-book'></i> Itinerários</a></li>
       <li><a href="esporte.html"><i class='bx bxs-basketball'></i> Esporte</a></li>
-      <li><a href="eventos/eventos.html"><i class="bx bx-calendar"></i> Eventos</a></li>
+      <li><a href="eventos.html"><i class="bx bx-calendar"></i> Eventos</a></li>
       <li><a href="gestao.html"><i class="bx bx-user"></i> Gestão</a></li>
             </ul>
 
@@ -366,7 +366,33 @@
         <p class="direitos">© 2025 E.E. Alberto Santos Dumont - Todos os direitos reservados</p>
     </footer>
 
-  <script src="./itinerario/itinerario.js"></script>
+<script src="./itinerario/itinerario.js"></script>
+  <!-- Adicionando script para o modal da galeria -->
+  <script>
+    function openModal(img) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+      
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+      document.body.style.overflow = "hidden";
+    }
+    
+    function closeModal() {
+      var modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+    
+    // Fechar modal com tecla ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
 
