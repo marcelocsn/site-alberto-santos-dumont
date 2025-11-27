@@ -21,9 +21,13 @@ header {
   color: var(--cor-destaque);
   display: flex;
   align-items: center;
-  padding: 1rem 1rem;
-  position: relative;
-  z-index: 100;
+  padding: 0.3rem 0.11rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
 }
 
 .nome-escola {
@@ -409,11 +413,13 @@ footer {
 @media (max-width: 600px) {
   header {
     display: flex;
-    flex-direction: row; /* mantém horizontal */
+    flex-direction: row;
+    /* mantém horizontal */
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 1rem 2.5rem; /* espaço extra para a logo */
-    position: relative;
+    padding: 0.8rem 1rem 2.5rem;
+    /* espaço extra para a logo */
+    position: fixed;
   }
 
   /* Botão hambúrguer */
@@ -436,20 +442,25 @@ footer {
   /* Nome da escola */
   .nome-escola {
     font-size: 1rem;
-    position: absolute;        /* fixa dentro do header */
-    top: 58px;                 /* desce */
-    left: 50%;                 /* centraliza */
+    position: absolute;
+    /* fixa dentro do header */
+    top: 58px;
+    /* desce */
+    left: 50%;
+    /* centraliza */
     transform: translateX(-50%);
     margin: 2;
     text-align: center;
     font-weight: bold;
-    white-space: nowrap;   /* impede o texto de quebrar */
+    white-space: nowrap;
+    /* impede o texto de quebrar */
   }
 
   /* Logo central */
   .logo-central {
     position: absolute;
-    top: -10px;                /* ajusta a altura */
+    top: -10px;
+    /* ajusta a altura */
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
@@ -460,12 +471,16 @@ footer {
     width: 100px;
     height: 100px;
   }
-   .menu-topo {
+
+  .menu-topo {
     width: 81%;
-    margin-top: 70px;            /* encosta mais no header */
+    margin-top: 70px;
+    /* encosta mais no header */
     background-color: var(--cor-primaria);
-    padding: 0.8rem;           /* altura mínima */
-    line-height: 1;              /* compacta ainda mais */
+    padding: 0.8rem;
+    /* altura mínima */
+    line-height: 1;
+    /* compacta ainda mais */
     align-items: center;
 
   }
@@ -474,6 +489,7 @@ footer {
   .menu-topo::-webkit-scrollbar {
     display: none;
   }
+
   .menu-topo {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -482,7 +498,8 @@ footer {
 
   .menu-topo ul {
     display: inline-flex;
-    gap: 0.8rem;                 /* espaçamento menor */
+    gap: 0.8rem;
+    /* espaçamento menor */
     padding: 0 0.5rem;
     list-style: none;
   }
@@ -492,8 +509,10 @@ footer {
     color: var(--cor-destaque);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.85rem;          /* fonte menor */
-    padding: 0.2rem 0.4rem;      /* só um respiro */
+    font-size: 0.85rem;
+    /* fonte menor */
+    padding: 0.2rem 0.4rem;
+    /* só um respiro */
   }
 
   .menu-topo a:hover {
@@ -505,18 +524,20 @@ footer {
   }
 
   .hero {
-  width: 400px;
-  height: 40px;
-  display: flex;
-  justify-content: center; /* Centraliza na horizontal */
-  align-items: center;     /* Centraliza na vertical */
-}
+    width: 400px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    /* Centraliza na horizontal */
+    align-items: center;
+    /* Centraliza na vertical */
+  }
 
-.hero-img {
-  max-width: 479px;
-  height: auto;
-  align-items: center;
-}
+  .hero-img {
+    max-width: 479px;
+    height: auto;
+    align-items: center;
+  }
 
 }
 
