@@ -89,10 +89,11 @@ function inscrever() {
     }
   }
 })()
-
+// ...existing code...
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".wrap").classList.add("visible")
 })
+// ...existing code...
 
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("hamburguer")
@@ -142,71 +143,27 @@ document.addEventListener("DOMContentLoaded", () => {
   new ThemeController()
 })
 
-// Carrossel da Galeria
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.getElementById("carouselTrack")
-  const prevBtn = document.getElementById("prevBtn")
-  const nextBtn = document.getElementById("nextBtn")
-  const indicators = document.querySelectorAll(".indicator")
+const modal = document.getElementById("modal")
+const modalImg = document.getElementById("modal-img")
+const captionText = document.getElementById("caption")
+const span = document.getElementsByClassName("close")[0]
 
-  if (!track || !prevBtn || !nextBtn) return
-
-  let currentIndex = 0
-  const totalSlides = document.querySelectorAll(".carousel-slide").length
-
-  function updateCarousel() {
-    const offset = -currentIndex * 100
-    track.style.transform = `translateX(${offset}%)`
-
-    // Atualizar indicadores
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === currentIndex)
-    })
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides
-    updateCarousel()
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides
-    updateCarousel()
-  }
-
-  // Event listeners dos botões
-  nextBtn.addEventListener("click", nextSlide)
-  prevBtn.addEventListener("click", prevSlide)
-
-  // Event listeners dos indicadores
-  indicators.forEach((indicator) => {
-    indicator.addEventListener("click", () => {
-      currentIndex = Number.parseInt(indicator.dataset.index)
-      updateCarousel()
-    })
+// Ativa o clique nas imagens
+document.querySelectorAll(".gallery-item img").forEach((img) => {
+  img.addEventListener("click", function () {
+    modal.style.display = "block"
+    modalImg.src = this.src
+    captionText.innerHTML = this.alt
   })
-
-  // Suporte para teclado (setas)
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") prevSlide()
-    if (e.key === "ArrowRight") nextSlide()
-  })
-
-  // Suporte para swipe em mobile
-  let touchStartX = 0
-  let touchEndX = 0
-
-  track.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX
-  })
-
-  track.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX
-    handleSwipe()
-  })
-
-  function handleSwipe() {
-    if (touchEndX < touchStartX - 50) nextSlide() // Swipe left
-    if (touchEndX > touchStartX + 50) prevSlide() // Swipe right
-  }
 })
+
+// Fecha o modal
+span.onclick = () => {
+  modal.style.display = "none"
+}
+// Fecha clicando fora da imagem
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none"
+  }
+}
