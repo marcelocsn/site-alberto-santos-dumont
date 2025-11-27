@@ -74,6 +74,28 @@ header {
   position: relative;
   z-index: 1000;
 }
+body > header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-destaque);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1rem;
+  flex-wrap: wrap;
+
+  position: fixed;          /* FIXA NO TOPO */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3000;            /* GARANTE QUE FICA POR CIMA DE TUDO */
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.wrap {
+  margin-top: 180px !important;  /* empurra o conteúdo para baixo do header */
+}
+
 
 .nome-escola {
   font-size: 1.5rem;
@@ -1117,3 +1139,40 @@ img[src*="assets/"]:hover {
       height: 200px;
     }
   }
+
+.hamburguer {
+    position: relative;
+    z-index: 3000 !important;
+}
+
+/* FORÇA O MENU HAMBURGUER A FICAR NO CANTO ESQUERDO EM QUALQUER TAMANHO */
+@media (max-width: 600px) {
+    header {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding: 0.8rem 1rem 2.5rem !important;
+    }
+
+    .hamburguer {
+        position: relative !important;
+        left: 0 !important;
+        margin-right: auto !important;  /* empurra a logo para o centro */
+        order: 0 !important;
+    }
+
+    .logo-central {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+/* IMPEDIR QUE O HEADER VIRE COLUNA NO MOBILE (É O QUE QUEBRA TUDO) */
+@media (max-width: 420px) {
+    header {
+        flex-direction: row !important;  /* <-- OBRIGA a manter igual ao PC */
+        align-items: center !important;
+        gap: 0 !important;
+    }
+}
