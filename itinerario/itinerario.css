@@ -116,6 +116,7 @@ header {
 .menu-topo a {
   text-decoration: none;
   color: var(--cor-destaque);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   font-weight: bold;
   transition: color 0.2s ease-in-out;
 }
@@ -401,40 +402,6 @@ footer {
   font-size: 0.75rem;
   opacity: 0.8;
 }
-
-/* Botão voltar ao topo simplificado */
-#btn-topo {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--cor-seta);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  opacity: 0;
-  visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.4s ease, transform 0.3s ease, visibility 0.4s;
-  z-index: 1000;
-}
-
-#btn-topo.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-#btn-topo:hover {
-  background: #000000;
-  transform: scale(1.1);
-}
-
 
 /* Estilos do itinerário consolidados */
 .wrap {
@@ -906,47 +873,6 @@ img[src*="assets/"]:hover {
   .logo-central img {
     width: 100px;
     height: 100px;
-  }
-
-  .menu-topo {
-    display: block;
-    width: 100%;
-    margin-top: 70px;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    background-color: var(--cor-primaria);
-    padding: 0.1rem 0;
-    line-height: 1;
-  }
-
-  .menu-topo::-webkit-scrollbar {
-    display: none;
-  }
-
-  .menu-topo {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .menu-topo ul {
-    display: inline-flex;
-    gap: 0.8rem;
-    padding: 0 0.5rem;
-    list-style: none;
-  }
-
-  .menu-topo a {
-    display: inline-block;
-    color: var(--cor-destaque);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 0.2rem 0.4rem;
-  }
-
-  .menu-topo a:hover {
-    color: #ffdd57;
   }
 
   #menu-lateral {
@@ -1575,31 +1501,129 @@ footer {
   font-size: 0.85rem;
   opacity: 0.9;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .menu-topo {
-    display: none;
-  }
-
-  .wrap {
-    padding: 1rem;
-  }
-
-  .brand {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .brand h1 {
-    font-size: 1.4rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .years {
-    flex-direction: column;
-  }
+/* Estilos para a galeria de imagens ampliada */
+/* Substituindo estilos da galeria antiga pelo carrossel */
+.galeria {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  text-align: center;
 }
+
+.galeria h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.galeria .medium {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Carrossel Container */
+.gallery-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+/* Container do carrossel */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Track que contém os slides */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Cada slide individual */
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Botões de navegação */
+.carousel-btn {
+  background: var(--accent);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: var(--accent-hover, #ff6b35);
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-btn i {
+  font-size: 2rem;
+}
+
+/* Indicadores */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: var(--accent);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  opacity: 0.7;
+}
+
+/* Mobile responsivo */

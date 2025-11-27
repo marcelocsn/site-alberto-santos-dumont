@@ -41,7 +41,7 @@
       <li><a href="história.html"><i class='bx bx-book'></i> História</a></li>
       <li><a href="estrutura.html"><i class='bx bx-building'></i> Estrutura</a></li>
       <li><a href="itinerario.html"><i class='bx bx-book'></i> Itinerários</a></li>
-      <li><a href="esporte.html"><i class='bx bxs-basketball'></i> Esporte</a></li>
+      <li><a href="esporte.html"><i class="bx bxs-basketball"></i> Esporte</a></li>
       <li><a href="eventos.html"><i class="bx bx-calendar"></i> Eventos</a></li>
       <li><a href="gestao.html"><i class="bx bx-user"></i> Gestão</a></li>
             </ul>
@@ -72,7 +72,7 @@
     
 
     <section class="intro">
-    <h1>Curso Técnico Profissionalizante</h1>
+    <h1>Itinerários Profissionalizantes</h1>
   </section>
       
 <article class="card" id="ti">
@@ -236,7 +236,7 @@
         </article>
       <br><br>
 <section class="intro2">
-    <h1>Itinerário Comum</h1>
+    <h1>Itinerários Acadêmicos</h1>
   </section>
 
             <section class="exatas" aria-label="itinerarios">
@@ -327,19 +327,39 @@
   <h2 id="galeria">Galeria dos Itinerários</h2>
   <p class="medium">Veja imagens das salas de aula e equipamentos usados nos itinerários.</p>
 
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="assets/IMG_4110.jpg" alt="Sala de Matemática e Física" />
+  <div class="gallery-carousel">
+    <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Imagem anterior">
+      <i class='bx bx-chevron-left'></i>
+    </button>
+    
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="assets/IMG_4110.jpg" alt="Sala de Matemática e Física" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/IMG_4111.jpg" alt="Laboratório de Química" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/IMG_4135.jpg" alt="Sala de Ciências Humanas" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/IMG_4138.jpg" alt="Espaço de Administração e Empreendedorismo" />
+        </div>
+      </div>
     </div>
-    <div class="gallery-item">
-      <img src="assets/IMG_4111.jpg" alt="Laboratório de Química" />
-    </div>
-    <div class="gallery-item">
-      <img src="assets/IMG_4135.jpg" alt="Sala de Ciências Humanas" />
-    </div>
-    <div class="gallery-item">
-      <img src="assets/IMG_4138.jpg" alt="Espaço de Administração e Empreendedorismo" />
-    </div>
+    
+    <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Próxima imagem">
+      <i class='bx bx-chevron-right'></i>
+    </button>
+  </div>
+  
+  <!-- Indicadores de posição -->
+  <div class="carousel-indicators" id="carouselIndicators">
+    <span class="indicator active" data-index="0"></span>
+    <span class="indicator" data-index="1"></span>
+    <span class="indicator" data-index="2"></span>
+    <span class="indicator" data-index="3"></span>
   </div>
 </section>
 </section>
@@ -367,32 +387,5 @@
     </footer>
 
 <script src="./itinerario/itinerario.js"></script>
-  <!-- Adicionando script para o modal da galeria -->
-  <script>
-    function openModal(img) {
-      var modal = document.getElementById("imageModal");
-      var modalImg = document.getElementById("modalImage");
-      var captionText = document.getElementById("caption");
-      
-      modal.style.display = "block";
-      modalImg.src = img.src;
-      captionText.innerHTML = img.alt;
-      document.body.style.overflow = "hidden";
-    }
-    
-    function closeModal() {
-      var modal = document.getElementById("imageModal");
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-    
-    // Fechar modal com tecla ESC
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeModal();
-      }
-    });
-  </script>
 </body>
 </html>
-
