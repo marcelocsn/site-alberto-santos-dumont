@@ -21,15 +21,19 @@ body {
 }
 
 header {
-  background-color: var(--cor-primaria);
-  color: var(--cor-destaque);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 2rem;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1000;
+    background-color: #004a99;
+    color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .nome-escola {
